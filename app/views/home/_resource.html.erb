@@ -1,0 +1,101 @@
+<% topic = Topic.find(locals[:topic_id])%>
+
+
+<div class="container-1 full">
+	<div class="full section med-img">
+		<h2><%= topic.title %></h2>
+	</div>
+	<% topic.articles.each do |a| %>
+
+
+
+		<div class="full">
+			<div class="medium-image-container left">
+				<%= image_tag("bullet_icon.png")%>
+			</div>
+			<!-- article title -->
+			<div class="option left" id="option_<%= a.id %>">
+				<h3><%= a.title %></h3>
+			</div>
+		</div>
+		<div class="full div_option" id="div_option_<%= a.id %>">
+			<div class="padder">
+				<table class="full table-1">
+					<tr>
+						<th class="icon"></th>
+						<% if a.contents.count == 0 %>
+							<th class="index">No hay recursos para este tema</th>
+						<% else %>
+							<th class="index">Recurso</th>
+						<% end %>
+						<th></th>
+					</tr>
+				
+					<!-- article contents -->
+					<% a.contents.each do |c| %>
+						<tr>
+							<td><div class="little-img-container"><%= image_tag(c.image) %></div></td>
+							<td class="index"><%= link_to c.name, c.url , :target => "_blank"%></td>
+							<td>
+
+
+								<!-- delete content icon cross -->
+								<% if current_member && current_member.is_admin %>
+									<div class="little-img-container">
+										<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_content", content_id: c.id %>
+									</div>
+								<% end %>
+
+
+
+							</td>
+						</tr>
+					<% end %>
+				</table>
+
+
+
+
+				<!-- formulario para subir un nuevo archivo -->
+				<% if current_member && current_member.is_admin %>
+					<div class="separator">
+					</div>
+					<div class="full">
+						<div class="left">
+							<%= form_tag({action: :upload_content}, multipart: true) do %>
+								<div class="full">
+									<%= text_field_tag 'name', 'titulo del contenido' %>
+								</div>
+								<div class="full">
+									<%= file_field_tag 'content_file' %>
+								</div>
+								<%= hidden_field_tag 'article_id' , a.id %>
+								<div class="full">
+									<%= submit_tag 'Listo'%>
+								</div>
+							<% end %>
+						</div>
+					</div>
+				<% end %>
+
+			</div>
+		</div>
+	<% end %>
+
+
+	<!-- new article form -->
+	<% if current_member && current_member.is_admin %>
+		<div class="full">
+			<div class="medium-image-container left">
+				<%= image_tag("bullet_icon.png")%>
+			</div>
+			<div class="left">
+				<%= form_tag({controller: "home", action: "topic_articles"}, method: "post") do %>
+					<h3><%= text_field_tag('title','Crear nuevo articulo') %></h3>
+					<%= hidden_field_tag('topic_id', topic.id)%>
+					<%= submit_tag("Crear")%>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>

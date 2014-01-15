@@ -1,0 +1,7 @@
+<% if @category_id %>
+	$('#category_<%= @category_id %>').slideUp();
+<% elsif @topic_id %>
+	$('#topic_<%= @topic_id%>').slideUp();
+<% elsif @article_id %>
+	alert('articulo eliminado');
+<% end %>

@@ -1,0 +1,1 @@
+WAZ::Storage::Base.establish_connection!(account_name: 'incuva', access_key: '0tDkUQJTolIN6YM9yFhdHj9rjgdYIxH1xns2i6HlKI6yugpIUdCreXKH7ahx+2s/QrmFvf+pSjO5e157UKfg4w==')

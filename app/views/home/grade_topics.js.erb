@@ -1,0 +1,1 @@
+$('#grade_topics_<%= @grade.id %>').html('<%= escape_javascript(render "grade_topics", :locals => {:grade_id => @grade.id, :category_id => @category.id }) %>');

@@ -1,0 +1,21 @@
+<% c = Category.find(locals[:category_id]) %>
+<div class="level">
+	<% c.grades.each do |g| %>
+	<div class="full">
+		<div class="little-img-container">
+			<%= image_tag("grade_icon.png")%>
+		</div>
+		<div class="nav-level left" id="level_2_<%= g.id %>">
+			<%= g.f_level %>
+		</div>
+	</div>
+
+
+
+		<!-- grade_topics -->
+		<div class="full nav-level-2 div_level_3_<%= g.id %> div_nav_level">
+			<%= render 'grade_topics', :locals => { :grade_id => g.id, :category_id => c.id } %>
+		</div>
+
+	<% end %>
+</div>

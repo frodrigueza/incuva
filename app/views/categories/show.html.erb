@@ -1,0 +1,11 @@
+<% @category.grades.each do |g| %>
+	<h3><%= g.f_level %></h1>
+	<% g.topics.where(category_id: @category.id).each do |t| %>
+		<h4><%= link_to t.title, t %></h4>
+	<% end %>
+	
+	</br>
+	------------------
+	</br>
+
+<% end %>

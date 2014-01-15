@@ -1,0 +1,15 @@
+<h2><%= @topic.title %></h2>
+
+<h4>objetivos de aprendizaje:</h4>
+<% @topic.articles.each do |a| %>
+	<%= link_to a.title, a %>
+	</br>
+	<%= a.description %>
+	</br>
+	-----
+	</br>
+<% end %>
+
+</br>
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

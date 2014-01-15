@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Incuba</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+		<%= render 'layouts/header' %>
+		<%= render 'layouts/title' %>
+		<%= render 'layouts/info' %>
+		<%= render 'layouts/secondary_info'%>
+		<%= render 'layouts/footer'%>
+
+		<%= yield %>
+
+</body>
+</html>

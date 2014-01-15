@@ -1,0 +1,23 @@
+<% t = Topic.find(locals[:topic_id]) %>
+<div class="level">
+	<% t.articles.each do |a| %>
+	<div class="full" id="#article_<%= a.id %>">
+		<div class="little-img-container">
+			<%= image_tag("article_icon.png")%>
+		</div>
+		<div class="left">
+			<%= link_to a.title, controller: "home", action: "resource", article_id: a.id, remote: true %>
+		</div>
+		<div class="little-img-container">
+			<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", article_id: a.id, remote: true %>
+		</div>
+	</div>
+	<% end %>
+	<div class="full">
+		<%= form_tag({controller: "home", action: "topic_articles"}, method: "post") do %>
+			<%= text_field_tag('title','Crear nuevo articulo')%>
+			<%= hidden_field_tag('topic_id', t.id)%>
+			<%= submit_tag("Crear")%>
+		<% end %>
+	</div>
+</div>

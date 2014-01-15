@@ -1,0 +1,54 @@
+<div class="span30 left">
+	<div class="padder">
+		<div class="left registration-div">
+			<%= form_for(:member, :url => member_registration_path) do |f| %>
+				<div class="full right-align">
+					<h3>Regístrate!</h3>
+				</div>
+				
+
+				<!-- formulario de inscripcion -->
+				<div class="registration-form">
+					<div class="full">
+						<div class="f-form-label">
+							<span>Email:</span>
+						</div>
+						<div class="f-form-input">
+								<%= f.email_field :email, :autofocus => true %>
+						</div>
+					</div>
+					<div class="full">
+						<div class="f-form-label">
+							<span>Password:</span>
+						</div>
+						<div class="f-form-input">
+								<%= f.password_field :password %>
+						</div>
+					</div>
+					<div class="full">
+						<div class="f-form-label">
+							<span>Confirmar password</span>
+						</div>
+						<div class="f-form-input">
+								<%= f.password_field :password_confirmation %>
+						</div>
+					</div>
+					<div class="full">
+						<div class="f-form-label">
+							
+						</div>
+						<div class="f-form-input">
+								<%= f.submit "Sign up" %>
+						</div>
+					</div>
+					</div>
+				</div>
+			<% end %>
+
+		</div>
+		<div class="full bottom">
+		</div>
+	</div>
+</div>
+
+
