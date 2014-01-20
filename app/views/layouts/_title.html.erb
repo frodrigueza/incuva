@@ -35,11 +35,15 @@
 					<% end %>
 				<% else %>
 					<div class="right">
-						<div class="small-padder">
-							<%= current_member.f_name %>
+						<div class="full">
+							<div class="small-padder">
+								<b><%= current_member.f_name %></b>
+							</div>
 						</div>
-						<div class="small-padder">
-							<%= link_to "Log out", destroy_member_session_path, :method => :delete  %>
+						<div class="full">
+							<div class="small-padder">
+								<%= link_to "Log out", destroy_member_session_path, :method => :delete  %>
+							</div>
 						</div>
 					</div>
 				<% end %>
