@@ -12,6 +12,15 @@
  *= require_self
  *= require_tree .
  */
+
+html{
+	background: url('title-background.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 body{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	color: #15767D;
@@ -55,9 +64,7 @@ h2{
 }
 .header-title{
 	color: white;
-	background: url("/assets/title-background.jpg");
-	/*background: url("logo_fondo_pizarra.jpg");*/
-	/*margin-top: 80px;*/
+	/*background: url('title-background.jpg');*/
 }
 #website-title{
 	color: peru;
