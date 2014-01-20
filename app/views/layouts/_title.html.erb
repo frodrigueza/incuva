@@ -17,7 +17,7 @@
 									<td></td>
 								</tr>
 								<tr>
-									<td><%= f.email_field :email, value:"Account", :autofocus => true %></td>
+									<td><%= f.email_field :email, value:"Account"%></td>
 									<td><%= f.password_field :password, value: 'password' %></td>
 									<td><%= f.submit "Sign in" %></td>
 								</tr>
@@ -73,22 +73,7 @@
 					</div>	
 					<%= form_for(:member, :url => member_registration_path) do |f| %>
 						<div class="registration-form">
-							<div class="full">
-								<div class="f-form-label">
-									<span>Nombre:</span>
-								</div>
-								<div class="f-form-input">
-										<%= f.text_field :name, :autofocus => true  %>
-								</div>
-							</div>
-							<div class="full">
-								<div class="f-form-label">
-									<span>Apellido:</span>
-								</div>
-								<div class="f-form-input">
-										<%= f.text_field :lastname %>
-								</div>
-							</div>
+							
 							<div class="full">
 								<div class="f-form-label">
 									<span>Email:</span>
