@@ -1,19 +1,83 @@
+<div class="full header-title fullscreen">
 
-<h2>Sign up</h2>
+	<!-- title -->
+	<div id="registration-full-div">
+		<div class="padder">
+			<!-- <h1 id="website-title">Incuva</h1> -->
+			<div class="full">
+				<div class="span40">
+					<%= image_tag('logo-Incuva-horizontal.png')%>
+				</div>
+			</div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+			
+			<div class="full">
+				<h4 id="registration_title">Formulario de registro</h4>
+			</div>
+			<div class="form-div">
+			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			  
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+			  	<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Nombre:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.text_field :name %>
+					</div>
+				</div>
+				<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Apellido:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.text_field :lastname %>
+					</div>
+				</div>
+			  	<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Email:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.email_field :email %>
+					</div>
+				</div>
+			  	<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Password:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.password_field :password %>
+					</div>
+				</div>
+			  	<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Confirm password:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.password_field :password_confirmation%>
+					</div>
+				</div>
+				<div class="full">
+					<%= devise_error_messages! %>
+				</div>
+				<div class="full">
+				  	<div class="f-form-label">
+				  		<span></span>
+				  	</div>
+				  	<div class="f-form.input">
+						<%= f.submit "Sign up" %>
+					</div>
+				</div>
+			<% end %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+			</div>
+
+		
+
+
+		</div>
+	</div>

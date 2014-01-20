@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+# Members
+Member.create(email: "admin@incuva.cl", password:"adminincuva", :password_confirmation => "adminincuva", is_admin: true, name: "Administrador", lastname: "Incuva")
+
 # grades
 12.times do |t|
 	Grade.create(level: t+1)
@@ -14,11 +18,9 @@ end
 Category.create(name: "Matematicas")
 Category.create(name: "Lenguaje")
 Category.create(name: "Historia")
-Category.create(name: "Ingles")
 Category.create(name: "Fisica")
 Category.create(name: "Biologia")
 Category.create(name: "Quimica")
-Category.create(name: "Religion")
 
 # topics
 Topic.create(title: "Algebra")
@@ -27,9 +29,9 @@ Topic.create(title: "Estadistica")
 Topic.create(title: "Geometria analitica")
 
 # articles
-Article.create(level: 1, title: "Productos Notables" , description: "Se trata de hacer entender al alumno la escencia de lo que son los productos notables")
-Article.create(level: 1, title: "Factorizaciones" , description: "Se trata de ahondar en los tipos de productos notables mas complejos")
-Article.create(level: 1, title: "Fracciones Algebraicas" , description: "Ejercicios básicos y explicativos de productos notables")
+Article.create(level: 1, title: "Productos Notables")
+Article.create(level: 1, title: "Factorizaciones")
+Article.create(level: 1, title: "Fracciones Algebraicas")
 
 # contents
 Content.create(name: "Introduccion")

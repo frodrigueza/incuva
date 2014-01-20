@@ -59,12 +59,13 @@
 
 		<% topic.articles.each do |a| %>
 			<% if a.contents.count > 0 %>
-				<div class="full">
-					<div class="medium-image-container left">
+				<div class="full article_option" id="article_<%= a.id %>">
+					<!-- pointer option -->
+					<div class="image-container">
 						<%= image_tag("bullet_icon.png")%>
 					</div>
 					<!-- article title -->
-					<div class="option left resource_option" id="option_<%= a.id %>">
+					<div class="option resource_option" id="option_<%= a.id %>">
 						<h3><%= a.title %></h3>
 					</div>
 				</div>

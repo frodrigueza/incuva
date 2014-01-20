@@ -41,6 +41,10 @@ input{
 h2, h3, h4, h5{
 	color: 444;
 }
+#registration_title{
+	text-align: center;
+	font-size: 40px;
+}
 h2{
 	margin-top: 0px;
 }
@@ -51,13 +55,15 @@ h2{
 }
 .header-title{
 	color: white;
-	min-height: 400px;
 	background: url("/assets/title-background.jpg");
 	/*background: url("logo_fondo_pizarra.jpg");*/
 	/*margin-top: 80px;*/
 }
 #website-title{
 	color: peru;
+}
+#title-image{
+	width: 350px;
 }
 
 
@@ -118,6 +124,9 @@ h1{
 .span30{
 	width: 30%;
 }
+.span40{
+	width: 40%;
+}
 .span70{
 	width: 70%;
 }
@@ -136,15 +145,9 @@ h1{
 .span10{
 	width: 10%;
 }
-.registration-div{
-	margin-top: 100px;
-}
 .content-1{
 	background-color: azure;
 	min-height: 400px;
-}
-.content-2{
-	max-height: 600px;
 }
 .nav-level-1{
 	padding: 5px;
@@ -171,6 +174,11 @@ h1{
 #resource{
 	/*height: 600px;*/
 }
+#resource .div_option{
+	background-color: antiquewhite;
+	border-radius: 20px;
+	margin-top: 10px;
+}
 #resource .article_option{
 	margin-top: 10px;
 }
@@ -195,8 +203,6 @@ img{
 	color: #D63131;
 }
 #resources-menu-right{
- 	/*min-height: 1000px;*/
- 	overflow-y: scroll;
 }
 #new-content-form{
 	width: 400px;
@@ -267,6 +273,9 @@ h2{
 	height: 60px;
 	width: 300px;
 }
+#login-div a{
+	color: white;
+}
 #login-inputs{
 	width: 200px;
 	height: 60px;
@@ -331,9 +340,14 @@ table .icon{
 
 
 /*registro*/
-#sign-up{
-	background-color: cadetblue;
-	position: relative;
-	width: 450px;
-	top:0px;
+#registration-full-div{
+	width: 70%;
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+}
+.fullscreen{
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
