@@ -52,7 +52,7 @@ h2{
 .header-title{
 	color: white;
 	min-height: 400px;
-	background: url("title-background.jpg");
+	background: url("/assets/title-background.jpg");
 	/*background: url("logo_fondo_pizarra.jpg");*/
 	/*margin-top: 80px;*/
 }
