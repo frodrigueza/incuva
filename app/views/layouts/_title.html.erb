@@ -1,11 +1,132 @@
 <div class="full header-title">
+	
+	<!-- menu -->
 	<div class="full">
-		<div class="padder">
-			<div class="left">
-				<h1>Incuva</h1>
+		<div class="right">
+			<div class="full">
+
+
+				<!-- login form -->
+				<% if !current_member %>
+					<%= form_for("member", :url => member_session_path) do |f| %>
+						<div class="right">
+							<table class="table-1">
+								<tr>
+									<td>Email</td>
+									<td>Password</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><%= f.email_field :email, value:"Account", :autofocus => true %></td>
+									<td><%= f.password_field :password, value: 'password' %></td>
+									<td><%= f.submit "Sign in" %></td>
+								</tr>
+								<tr>
+									<td>
+										<div class="option" id="option_signup">
+											Registrate
+										</div>
+									</td>
+									<td>¿Olvidaste tu password?</td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+					<% end %>
+				<% else %>
+					<div class="right">
+						<table class="table-1">
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><%= current_member.f_name %></td>
+								<td><%= link_to "Log out", destroy_member_session_path, :method => :delete  %></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<!-- title -->
+	<div class="full">
+		<div class="span70">
+			<div class="padder">
+				<!-- <h1 id="website-title">Incuva</h1> -->
+				<div><%= image_tag('logo-Incuva-horizontal.png')%></div>
 				<h2 id="to-website-subtitle">Un proyecto de <%= link_to 'Elige Educar', 'http://www.eligeeducar.cl' , :target => "_blank"%></h2>
 				<h3>El portal donde los profesores pueden obtener el mejor material para hacer sus clases</h3>
 			</div>
 		</div>
+		<div class="span30">
+			<div class="padder">
+
+				<div class="div_option" id="div_option_signup">
+				<!-- formulario de inscripcion -->
+					<div class="full">
+						<h4>Formulario de registro</h4>
+					</div>	
+					<%= form_for(:member, :url => member_registration_path) do |f| %>
+						<div class="registration-form">
+							<div class="full">
+								<div class="f-form-label">
+									<span>Nombre:</span>
+								</div>
+								<div class="f-form-input">
+										<%= f.text_field :name, :autofocus => true  %>
+								</div>
+							</div>
+							<div class="full">
+								<div class="f-form-label">
+									<span>Apellido:</span>
+								</div>
+								<div class="f-form-input">
+										<%= f.text_field :lastname %>
+								</div>
+							</div>
+							<div class="full">
+								<div class="f-form-label">
+									<span>Email:</span>
+								</div>
+								<div class="f-form-input">
+										<%= f.email_field :email%>
+								</div>
+							</div>
+							<div class="full">
+								<div class="f-form-label">
+									<span>Password:</span>
+								</div>
+								<div class="f-form-input">
+										<%= f.password_field :password %>
+								</div>
+							</div>
+							<div class="full">
+								<div class="f-form-label">
+									<span>Confirmar password</span>
+								</div>
+								<div class="f-form-input">
+										<%= f.password_field :password_confirmation %>
+								</div>
+							</div>
+							<div class="full">
+								<div class="f-form-label">
+									
+								</div>
+								<div class="f-form-input">
+										<%= f.submit "Sign up" %>
+								</div>
+							</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
 	</div>
+
 </div>

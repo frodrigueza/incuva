@@ -3,5 +3,5 @@
 <% elsif @topic_id %>
 	$('#topic_<%= @topic_id%>').slideUp();
 <% elsif @article_id %>
-	alert('articulo eliminado');
+	$('#article_<%= @article_id%>').slideUp();
 <% end %>

@@ -1,0 +1,13 @@
+<% topic = Topic.find(locals[:topic_id])%>
+<div class="full article_option">
+	<div class="image-container left">
+		<%= image_tag("bullet_icon.png")%>
+	</div>
+	<div class="resource_option">
+		<%= form_tag({controller: "home", action: "topic_articles"}, method: "post") do %>
+			<h3><%= text_field_tag 'title','Crear nuevo articulo' , required: true %></h3>
+			<%= hidden_field_tag('topic_id', topic.id)%>
+			<%= submit_tag("Crear")%>
+		<% end %>
+	</div>
+</div>

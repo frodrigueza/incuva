@@ -15,11 +15,18 @@ class Content < ActiveRecord::Base
 		'file.png'
 	end
 
-	def upload_content(file_up)
-		container = WAZ::Blobs::Container.find('contents')
-		filename = rand(36**32).to_s(36) + File.extname(file_up.original_filename)
-		container.store(filename, file_up.read, file_up.content_type)
-		self.url = container[filename].url
+	def upload_content(params)
+
+		# vemos si se subio un archivo o un link
+		if file_up = params[:content_file]
+			container = WAZ::Blobs::Container.find('contents')
+			filename = rand(36**32).to_s(36) + File.extname(file_up.original_filename)
+			container.store(filename, file_up.read, file_up.content_type)
+			self.url = container[filename].url
+		else
+			self.url = params[:url]
+		end
+		Article.find(params[:article_id]).contents << self
 	end
 
 	def delete_blob

@@ -53,10 +53,14 @@ h2{
 	color: white;
 	min-height: 400px;
 	background: url("title-background.jpg");
-	margin-top: 80px;
-
-
+	/*background: url("logo_fondo_pizarra.jpg");*/
+	/*margin-top: 80px;*/
 }
+#website-title{
+	color: peru;
+}
+
+
 .padder{
 	padding: 20px;
 	padding-bottom: 20px;
@@ -70,11 +74,11 @@ h2{
 	width: 100%;
 }
 .always-on-top{
-	position: fixed;
+	/*position: fixed;*/
 	top: 0px;
 	height: 80px;
 	left: 0;
-	background-color: #444;
+	background-color: cadetblue;
 	color: white;
 }
 .always-on-top img{
@@ -136,8 +140,11 @@ h1{
 	margin-top: 100px;
 }
 .content-1{
-	float: left;
-	background-color: #F2F079;
+	background-color: azure;
+	min-height: 400px;
+}
+.content-2{
+	max-height: 600px;
 }
 .nav-level-1{
 	padding: 5px;
@@ -164,6 +171,23 @@ h1{
 #resource{
 	/*height: 600px;*/
 }
+#resource .article_option{
+	margin-top: 10px;
+}
+#resource .article_option h3{
+	margin: 0px;
+}
+#resource .article_option .image-container{
+	width: 20px;
+	height: 20px;
+}
+#resource .resource_option{
+	margin-right: 10px;
+	margin-left: 10px;
+}
+img{
+	width: 100%;
+}
 #resources-menu-left{
 	/*height: 1000px;*/
 }
@@ -174,6 +198,14 @@ h1{
  	/*min-height: 1000px;*/
  	overflow-y: scroll;
 }
+#new-content-form{
+	width: 400px;
+}
+
+#new-content-form .f-form-label{
+	width: 100px;
+}
+
 
 h2{
 	font-size: 40px;
@@ -191,35 +223,30 @@ h2{
 	height: 100px;
 	float: left;
 }
-.medium-image-container{
-	width: 60px;
-	height: 60px;
-	float: left;
-}
+.delete-icon-div{
+	opacity: 0.6;
+ }
+.delete-icon-div:hover{
+	opacity: 1;
+ }
 
 .large-image-container{
 	width: 60px;
 	height: 60px;
-	float: left;
 }
 .large-image-container img{
-	width: 60px;
-	height: 60px;
 	float: left;
 }
 
-.medium-image-container img{
-	width: 20px;
-	height: 20px;
-	margin-top: 20px;
-	margin-left: 20px;
-	float: left;
-}
 .option {
 	cursor: pointer;
 }
 .resource_option{
-	max-width: 700px;
+	max-width: 80%;
+	/*margin-left: 40px;*/
+}
+.resource_option:hover{
+	color: #E6E615;
 }
 .left-menu-option{
 	max-width: 250px;
@@ -230,7 +257,7 @@ h2{
 .separator{
 	width: 100%;
 	float: left;
-	height: 60px;
+	height: 20px;
 }
 .login-form{
 	float: right;
@@ -261,8 +288,21 @@ table .icon{
 }
 
 #secondary_info{
-	background-color: white;
+	background: url("title-background.jpg");
 }
+#secondary_info #title{
+	color: white;
+}
+#secondary_info #subtitle{
+	color: darkorange;
+}
+#secondary_info #bullet{
+	color: deepskyblue;
+}
+#secondary_info img{
+	width: 100%;
+}
+
 .f-form-label{
 	text-align: right;
 	width: 50%;
@@ -287,10 +327,10 @@ table .icon{
 }
 
 
-
 /*registro*/
 #sign-up{
-	background-color: #444;
+	background-color: cadetblue;
+	position: relative;
 	width: 450px;
 	top:0px;
 }

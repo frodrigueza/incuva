@@ -1,101 +1,131 @@
 <% topic = Topic.find(locals[:topic_id])%>
 
 
+	
 <div class="container-1 full">
 	<div class="full section med-img">
 		<h2><%= topic.title %></h2>
 	</div>
-	<% topic.articles.each do |a| %>
 
+	
+	<% if current_member && current_member.is_admin %>
+		<% topic.articles.order(:title).each do |a| %>
+			<div class="full article_option" id="article_<%= a.id %>">
 
+				<!-- pointer option -->
+				<div class="image-container">
+					<%= image_tag("bullet_icon.png")%>
+				</div>
+				<!-- article title -->
+				<div class="option resource_option" id="option_<%= a.id %>">
+					<h3><%= a.title %></h3>
+				</div>
 
-		<div class="full">
-			<div class="medium-image-container left">
-				<%= image_tag("bullet_icon.png")%>
+				<!-- delete option -->
+				<div class="image-container delete-icon-div">
+					<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", article_id: a.id, remote: true %>
+				</div>
 			</div>
-			<!-- article title -->
-			<div class="option left" id="option_<%= a.id %>">
-				<h3><%= a.title %></h3>
-			</div>
-		</div>
-		<div class="full div_option" id="div_option_<%= a.id %>">
-			<div class="padder">
-				<table class="full table-1">
-					<tr>
-						<th class="icon"></th>
-						<% if a.contents.count == 0 %>
-							<th class="index">No hay recursos para este tema</th>
-						<% else %>
-							<th class="index">Recurso</th>
-						<% end %>
-						<th></th>
-					</tr>
-				
-					<!-- article contents -->
-					<% a.contents.each do |c| %>
+			<div class="full div_option" id="div_option_<%= a.id %>">
+				<div class="padder">
+					<table class="full table-1" id="article_contents_table_<%= a.id%>">
 						<tr>
-							<td><div class="little-img-container"><%= image_tag(c.image) %></div></td>
-							<td class="index"><%= link_to c.name, c.url , :target => "_blank"%></td>
-							<td>
-
-
-								<!-- delete content icon cross -->
-								<% if current_member && current_member.is_admin %>
-									<div class="little-img-container">
-										<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_content", content_id: c.id %>
-									</div>
-								<% end %>
-
-
-
-							</td>
+							<th class="icon"></th>
+							<th class="index">Recurso</th>
+							<th></th>
 						</tr>
-					<% end %>
-				</table>
+					
+						<!-- article contents -->
+						<% a.contents.each do |c| %>
+							<%= render 'content', locals: { content_id: c.id }%>
+						<% end %>
+					</table>
 
 
-
-
-				<!-- formulario para subir un nuevo archivo -->
-				<% if current_member && current_member.is_admin %>
-					<div class="separator">
-					</div>
-					<div class="full">
-						<div class="left">
-							<%= form_tag({action: :upload_content}, multipart: true) do %>
-								<div class="full">
-									<%= text_field_tag 'name', 'titulo del contenido' %>
-								</div>
-								<div class="full">
-									<%= file_field_tag 'content_file' %>
-								</div>
-								<%= hidden_field_tag 'article_id' , a.id %>
-								<div class="full">
-									<%= submit_tag 'Listo'%>
-								</div>
-							<% end %>
-						</div>
-					</div>
-				<% end %>
-
+					<!-- formulario para subir un nuevo content -->
+					<%= render 'new_content_form', :locals => {:article_id => a.id } %>
+				</div>
 			</div>
-		</div>
+		<% end %>
+
+		<!-- new article form -->
+		<%= render 'new_article_form', locals: { topic_id: topic.id }%>
+
+
+
+
+	<% else %>
+	<!-- common user view -->
+
+		<% topic.articles.each do |a| %>
+			<% if a.contents.count > 0 %>
+				<div class="full">
+					<div class="medium-image-container left">
+						<%= image_tag("bullet_icon.png")%>
+					</div>
+					<!-- article title -->
+					<div class="option left resource_option" id="option_<%= a.id %>">
+						<h3><%= a.title %></h3>
+					</div>
+				</div>
+				<div class="full div_option" id="div_option_<%= a.id %>">
+					<div class="padder">
+						<table class="full table-1">
+							<tr>
+								<th class="icon"></th>
+								<th class="index">Recurso</th>
+								<th></th>
+							</tr>
+						
+							<!-- article contents -->
+							<% a.contents.each do |c| %>
+								<tr>
+									<td><div class="little-img-container"><%= image_tag(c.image) %></div></td>
+									<td class="index"><%= link_to c.name, c.url , :target => "_blank"%></td>
+									<td>
+
+
+										<!-- delete content icon cross -->
+										<% if current_member && current_member.is_admin %>
+											<div class="little-img-container">
+												<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_content", content_id: c.id %>
+											</div>
+										<% end %>
+
+
+
+									</td>
+								</tr>
+							<% end %>
+						</table>
+						<!-- formulario para subir un nuevo archivo -->
+						<% if current_member && current_member.is_admin %>
+							<div class="separator">
+							</div>
+							<div class="full">
+								<div class="left">
+									<%= form_tag({action: :upload_content}, multipart: true) do %>
+										<div class="full">
+											<%= text_field_tag 'name', 'titulo del contenido' %>
+										</div>
+										<div class="full">
+											<%= file_field_tag 'content_file' %>
+										</div>
+										<%= hidden_field_tag 'article_id' , a.id %>
+										<div class="full">
+											<%= submit_tag 'Listo'%>
+										</div>
+									<% end %>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
 	<% end %>
 
 
-	<!-- new article form -->
 	<% if current_member && current_member.is_admin %>
-		<div class="full">
-			<div class="medium-image-container left">
-				<%= image_tag("bullet_icon.png")%>
-			</div>
-			<div class="left">
-				<%= form_tag({controller: "home", action: "topic_articles"}, method: "post") do %>
-					<h3><%= text_field_tag('title','Crear nuevo articulo') %></h3>
-					<%= hidden_field_tag('topic_id', topic.id)%>
-					<%= submit_tag("Crear")%>
-				<% end %>
-			</div>
-		</div>
 	<% end %>
 </div>

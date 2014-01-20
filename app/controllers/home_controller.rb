@@ -12,18 +12,24 @@ class HomeController < ApplicationController
   	c.name = params[:name]
   	c.save
 
-  	c.upload_content(params[:content_file])
-  	Article.find(params[:article_id]).contents << c
-
-  	redirect_to request.referer
+  	
+	c.upload_content(params)
+	@content = c
+  	respond_to do |format|
+  		format.js
+  	end
   end
 
   def delete_content
   	c = Content.find(params[:content_id])
+  	@content = c
   	c.delete_blob
   	c.destroy
 
-  	redirect_to request.referer
+  	
+  	respond_to do |format|
+  		format.js
+  	end
   end
 
   def topic_articles

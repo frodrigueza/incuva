@@ -31,4 +31,18 @@ class Grade < ActiveRecord::Base
 				return 'IV Medio'
 		end
 	end
+
+	
+	def contents
+		contents = []
+		self.topics.each do |t|
+			t.articles.each do |a|
+				a.contents.each do |c|
+					contents << c
+				end
+			end
+		end
+
+		return contents
+	end
 end
