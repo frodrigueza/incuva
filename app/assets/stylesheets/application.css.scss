@@ -14,7 +14,7 @@
  */
 
 html{
-	background: url('/assets/title-background.jpg') no-repeat center center fixed; 
+	background: asset-url('/assets/title-background.jpg', image) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -62,10 +62,14 @@ h2{
 	width: 100%;
 	float: left;
 }
+.middle{
+	width: 50%;
+}
 .centered{
 	float: none;
 	margin-left: auto;
 	margin-right: auto;
+
 }
 .header-title{
 	color: white;
@@ -120,7 +124,9 @@ h2{
 #footer{
 	background-color: #444;
 }
-
+#to-website-subtitle{
+	text-align: center;
+}
 #to-website-subtitle a:hover{
 	color: #E6E615;
 }
@@ -186,9 +192,9 @@ h1{
 	width: 100%;
 }
 #resource .div_option{
-	background-color: antiquewhite;
 	border-radius: 20px;
-	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 20px;
 }
 #resource .article_option{
 	margin-top: 10px;
@@ -209,15 +215,17 @@ img{
 }
 
 #resources-menu-left{
-	min-height: 600px;
+	/*min-height: 1600px;*/
+	background-color: honeydew;
 }
 #resources-menu-right{
 	background-color: honeydew;
-	min-height: 600px;
+	/*min-height: 1600px;*/
+}
+#info_div{
+	background-color: honeydew;
 }
 
-
-}
 .resource_option:hover{
 	color: #D63131;
 }
@@ -317,9 +325,6 @@ table .icon{
 	width: 30px;
 }
 
-#secondary_info{
-	background: url("title-background.jpg");
-}
 #secondary_info #title{
 	color: white;
 }
@@ -356,6 +361,16 @@ table .icon{
 
 .table-1 tr{
 	font-size: 14px;
+	height: 40px;
+
+}
+.table-1 tr:hover{
+	background-color: none;
+
+}
+.table-1 td{
+	/*background-color: darkseagreen;*/
+	border-bottom: 1px solid azure;
 }
 table{
 	border-spacing: 0px;
