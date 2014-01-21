@@ -5,7 +5,7 @@
 		<div class="padder">
 			<!-- <h1 id="website-title">Incuva</h1> -->
 			<div class="full">
-				<div class="span40 centered">
+				<div class="span40">
 					<%= image_tag('logo-Incuva-horizontal.png')%>
 				</div>
 			</div>
@@ -14,10 +14,28 @@
 
 			
 			<div class="full">
-				<h4 id="registration_title">Ingresar</h4>
+				<h4 id="registration_title">Formulario de registro</h4>
 			</div>
 			<div class="form-div">
-			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<%= form_for("member", :url => member_registration_path) do |f| %>
+			  
+
+			  	<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Nombre:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.text_field :name %>
+					</div>
+				</div>
+				<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Apellido:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.text_field :lastname %>
+					</div>
+				</div>
 			  	<div class="full">
 				  	<div class="f-form-label">
 				  		<span>Email:</span>
@@ -34,41 +52,29 @@
 					  	<%= f.password_field :password %>
 					</div>
 				</div>
-
-					<% if devise_mapping.rememberable? -%>
-					  	<div class="full">
-						  	<div class="f-form-label">
-						  		<span></span>
-						  	</div>
-						  	<div class="f-form.input">
-								<%= f.check_box :remember_me %> <%= f.label :remember_me %>
-							</div>
-						</div>
-					<% end -%>
-				<div class="full">
-					<%= devise_error_messages! %>
+			  	<div class="full">
+				  	<div class="f-form-label">
+				  		<span>Confirm password:</span>
+				  	</div>
+				  	<div class="f-form.input">
+					  	<%= f.password_field :password_confirmation%>
+					</div>
 				</div>
 				<div class="full">
 				  	<div class="f-form-label">
 				  		<span></span>
 				  	</div>
 				  	<div class="f-form.input">
-						<%= f.submit "Ingresar" %>
+						<%= f.submit "Sign up" %>
 					</div>
 				</div>
 			<% end %>
 
-			<!-- forgot my password -->
-			<%= render "devise/shared/links" %>
 
 			</div>
-
-
-
 
 		
 
 
 		</div>
 	</div>
-</div>

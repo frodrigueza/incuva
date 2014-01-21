@@ -62,9 +62,13 @@ h2{
 	width: 100%;
 	float: left;
 }
+.centered{
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
 .header-title{
 	color: white;
-	/*background: url('title-background.jpg');*/
 }
 #website-title{
 	color: peru;
@@ -216,12 +220,9 @@ img{
 }
 .resource_option:hover{
 	color: #D63131;
+}
 #new-content-form{
 	width: 400px;
-}
-
-#new-content-form .f-form-label{
-	width: 100px;
 }
 .content_row:hover{
 	background-color: azure;
@@ -331,7 +332,9 @@ table .icon{
 #secondary_info img{
 	width: 100%;
 }
-
+#new_content_form{
+	width: 240px;
+}
 .f-form-label{
 	text-align: right;
 	width: 50%;
@@ -353,6 +356,9 @@ table .icon{
 
 .table-1 tr{
 	font-size: 14px;
+}
+table{
+	border-spacing: 0px;
 }
 
 

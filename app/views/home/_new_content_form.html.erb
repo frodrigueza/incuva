@@ -4,43 +4,41 @@
 <div class="separator">
 </div>
 <div class="full">
-	<div id="new-file-form">
-		<div id="new-content-form">
-			<%= form_tag({action: :upload_content}, multipart: true, id:"new_content_form") do %>
-				<div class="full">
-					<div class="f-form-label">
-						<span></span>
-					</div>
-					<div class="f-form-input">
-						<b>Subir desde PC</b>
-					</div>
+	<div id="new_content_form">
+		<%= form_tag({action: :upload_content}, multipart: true, id:"new_content_form") do %>
+			<div class="full">
+				<div class="f-form-label">
+					<span></span>
 				</div>
-				<div class="full">
-					<div class="f-form-label">
-						<span>Titulo:</span>
-					</div>
-					<div class="f-form-input">
-						<%= text_field_tag 'name','', required: true%>
-					</div>
+				<div class="f-form-input">
+					<b>Subir desde PC</b>
 				</div>
-				<div class="full">
-					<div class="f-form-label">
-						<span>Archivo:</span>
-					</div>
-					<div class="f-form-input">
-						<%= file_field_tag 'content_file',required: true %>
-					</div>
+			</div>
+			<div class="full">
+				<div class="f-form-label">
+					<span>Titulo:</span>
 				</div>
-				<div class="full" id="form-notices"></div>
-				<%= hidden_field_tag 'article_id' , a.id %>
-				<div class="full">
-					<div class="f-form-label"></div>
-					<div class="f-form-input">
-						<%= submit_tag 'Listo'%>
-					</div>
+				<div class="f-form-input">
+					<%= text_field_tag 'name','', required: true%>
 				</div>
-			<% end %>
-		</div>
+			</div>
+			<div class="full">
+				<div class="f-form-label">
+					<span>Archivo:</span>
+				</div>
+				<div class="f-form-input">
+					<%= file_field_tag 'content_file',required: true %>
+				</div>
+			</div>
+			<div class="full" id="form-notices"></div>
+			<%= hidden_field_tag 'article_id' , a.id %>
+			<div class="full">
+				<div class="f-form-label"></div>
+				<div class="f-form-input">
+					<%= submit_tag 'Listo'%>
+				</div>
+			</div>
+		<% end %>
 	</div>
 </div>
 
@@ -49,43 +47,45 @@
 <!-- formulario de url -->
 <div class="separator">
 </div>
+
 <div class="full">
-	<div id="new-file-form">
-		<div id="new-content-form">
-			<%= form_tag({action: :upload_content}, multipart: true, remote:true, id:"new_content_form") do %>
-				<div class="full">
-					<div class="f-form-label">
-						<span></span>
-					</div>
-					<div class="f-form-input">
-						<b>Subir por URL</b>
-					</div>
+	<div id="new_content_form">
+		<%= form_tag({action: :upload_content}, multipart: true, remote:true, id:"new_content_form") do %>
+			<%= hidden_field_tag 'article_id' , a.id %>
+			<div class="full">
+				<div class="f-form-label">
+					<span></span>
 				</div>
-				<div class="full">
-					<div class="f-form-label">
-						<span>Titulo:</span>
-					</div>
-					<div class="f-form-input">
-						<%= text_field_tag 'name','', required: true%>
-					</div>
+				<div class="f-form-input">
+					<b>Subir por URL</b>
 				</div>
-				<div class="full">
-					<div class="f-form-label">
-						<span>URL:</span>
-					</div>
-					<div class="f-form-input">
-						<%= text_field_tag 'url','', required: true %>
-					</div>
+			</div>
+
+			<div class="full">
+				<div class="f-form-label">
+					<span>Titulo:</span>
 				</div>
-				<div class="full" id="form-notices"></div>
-				<%= hidden_field_tag 'article_id' , a.id %>
-				<div class="full">
-					<div class="f-form-label"></div>
-					<div class="f-form-input">
-						<%= submit_tag 'Listo'%>
-					</div>
+				<div class="f-form-input">
+					<%= text_field_tag 'name','', required: true%>
 				</div>
-			<% end %>
-		</div>
+			</div>
+
+			<div class="full">
+				<div class="f-form-label">
+					<span>URL:</span>
+				</div>
+				<div class="f-form-input">
+					<%= text_field_tag 'url','', required: true %>
+				</div>
+			</div>
+
+			<div class="full">
+				<div class="f-form-label">
+				</div>
+				<div class="f-form-input">
+					<%= submit_tag 'Listo'%>
+				</div>
+			</div>
+		<% end %>
 	</div>
 </div>

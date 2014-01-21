@@ -1,10 +1,19 @@
 class HomeController < ApplicationController
-  layout nil
 
   def index
+  	if !current_member
+  		redirect_to "members/sign_in"
+  	end
+
   	@grades = Grade.all
   	@categories = Category.all
   	@content = Content.new
+  end
+
+  def sessions
+  	render layout: nil
+
+
   end
 
   def upload_content
