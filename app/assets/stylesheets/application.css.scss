@@ -14,7 +14,7 @@
  */
 
 html{
-	background: asset-url('/assets/title-background.jpg', image) no-repeat center center fixed; 
+	background: asset-url('title-background.jpg', image) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
