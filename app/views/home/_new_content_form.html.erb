@@ -34,6 +34,14 @@
 							<%= text_field_tag 'url','', required: true %>
 						</div>
 					</div>
+					<div class="full">
+						<div class="f-form-label">
+							<span>Fuente:</span>
+						</div>
+						<div class="f-form-input">
+							<%= text_field_tag 'source','http://www.eligeeducar.cl', required: true%>
+						</div>
+					</div>
 
 					<div class="full">
 						<div class="f-form-label">
@@ -41,21 +49,25 @@
 						</div>
 						<div class="f-form-input">
 							<div class="full">
-								<%= radio_button_tag(:age, "pdf") %>
+								<%= radio_button_tag(:extension, "pdf", checked: true) %>
 								documento
 							</div><div class="full">
-								<%= radio_button_tag(:age, "mp3") %>
+								<%= radio_button_tag(:extension, "mp3") %>
 								audio
 							</div><div class="full">
-								<%= radio_button_tag(:age, "mp4") %>
+								<%= radio_button_tag(:extension, "mp4") %>
 								video
 							</div><div class="full">
-								<%= radio_button_tag(:age, "jpg") %>
+								<%= radio_button_tag(:extension, "jpg") %>
 								imagen
 							</div>
 							<div class="full">
-								<%= radio_button_tag(:age, "rar") %>
+								<%= radio_button_tag(:extension, "rar") %>
 								zip - rar
+							</div>
+							<div class="full">
+								<%= radio_button_tag(:extension, "ppt") %>
+								powerpoint
 							</div>
 						</div>
 					</div>
@@ -99,6 +111,42 @@
 						</div>
 						<div class="f-form-input">
 							<%= file_field_tag 'content_file',required: true %>
+						</div>
+					</div>
+					<div class="full">
+						<div class="f-form-label">
+							<span>Fuente:</span>
+						</div>
+						<div class="f-form-input">
+							<%= text_field_tag 'source','http://www.eligeeducar.cl', required: true%>
+						</div>
+					</div>
+					<div class="full">
+						<div class="f-form-label">
+							<span>Tipo archivo:</span>
+						</div>
+						<div class="f-form-input">
+							<div class="full">
+								<%= radio_button_tag(:extension, "pdf", checked: true) %>
+								documento
+							</div><div class="full">
+								<%= radio_button_tag(:extension, "mp3") %>
+								audio
+							</div><div class="full">
+								<%= radio_button_tag(:extension, "mp4") %>
+								video
+							</div><div class="full">
+								<%= radio_button_tag(:extension, "jpg") %>
+								imagen
+							</div>
+							<div class="full">
+								<%= radio_button_tag(:extension, "rar") %>
+								zip - rar
+							</div>
+							<div class="full">
+								<%= radio_button_tag(:extension, "ppt") %>
+								powerpoint
+							</div>
 						</div>
 					</div>
 					<div class="full" id="form-notices"></div>

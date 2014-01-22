@@ -23,7 +23,7 @@
 
 				<!-- delete option -->
 				<div class="image-container delete-icon-div">
-					<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", article_id: a.id, remote: true %>
+					<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", article_id: a.id}, remote: true, class: "delete_icon" %>
 				</div>
 			</div>
 			<div class="full div_option" id="div_option_<%= a.id %>">
@@ -89,7 +89,7 @@
 										<!-- delete content icon cross -->
 										<% if current_member && current_member.is_admin %>
 											<div class="little-img-container">
-												<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_content", content_id: c.id %>
+											<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_content", content_id: c.id}, class: "delete_icon"%>
 											</div>
 										<% end %>
 

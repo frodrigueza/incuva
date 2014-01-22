@@ -11,8 +11,6 @@ Bundler.require(:default, Rails.env)
 module Incuba
   class Application < Rails::Application
     
-    # fail login redirect devise
-    config.autoload_paths += %W(#{config.root}/lib)
 
     # Heroku requires this to be false
     config.assets.initialize_on_precompile=false

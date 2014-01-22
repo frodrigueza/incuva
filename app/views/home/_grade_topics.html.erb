@@ -15,7 +15,7 @@
 				</div>
 				<% if current_member && current_member.is_admin %>
 					<div class="little-img-container delete-icon-div">
-						<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", topic_id: t.id, remote: true %>
+						<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", topic_id: t.id}, remote: true, class: "delete_icon" %>
 					</div>
 				<% end %>
 			</div>

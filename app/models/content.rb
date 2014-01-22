@@ -1,18 +1,24 @@
 class Content < ActiveRecord::Base
 	belongs_to :article
 
-	has_attached_file :note
-
 	def image
-		# if self.content_type == 1
-		# 	return "file.png"
-		# elsif self.content_type == 2
-		# 	return "music.png"
-		# elsif self.content_type == 4
-		# 	return "powerpoint.png"
-		# end
 
-		'file.png'
+		if self.extension == 'pdf'
+			return "file.png"
+		elsif self.extension == 'mp3'
+			return "music_icon.png"
+		elsif self.extension == 'mp4'
+			return "video.png"
+		elsif self.extension == 'jpg'
+			return "image.png"
+		elsif self.extension == 'rar'
+			return "compressed.png"
+		elsif self.extension == 'ppt'
+			return "powerpoint.png"
+		else
+			return "file.png"
+		end
+		
 	end
 
 	def upload_content(params)
@@ -25,6 +31,7 @@ class Content < ActiveRecord::Base
 			self.url = container[filename].url
 		else
 			self.url = params[:url]
+			self.extension = params[:extension]
 		end
 		Article.find(params[:article_id]).contents << self
 	end
