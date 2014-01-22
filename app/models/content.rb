@@ -29,9 +29,11 @@ class Content < ActiveRecord::Base
 			filename = rand(36**32).to_s(36) + File.extname(file_up.original_filename)
 			container.store(filename, file_up.read, file_up.content_type)
 			self.url = container[filename].url
+			self.source = params[:source]
 		else
 			self.url = params[:url]
 			self.extension = params[:extension]
+			self.source = URI.parse(url).host
 		end
 		Article.find(params[:article_id]).contents << self
 	end

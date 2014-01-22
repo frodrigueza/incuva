@@ -23,7 +23,7 @@ html{
 
 body{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #15767D;
+	color: #004964;
 	margin: 0px;
 	/*width: 1200px;
 	margin-left: auto;
@@ -39,16 +39,13 @@ div{
 	float: left;
 }
 a:hover{
-	color: #bbd531;
+	color: #e30043
 }
 
 input{
 	border-radius: 5px;
 	padding: 3px;
 	border: 1px solid #999999;
-}
-h2, h3, h4, h5{
-	color: #004964;
 }
 #registration_title{
 	text-align: center;
@@ -90,6 +87,9 @@ h2{
 .level{
 	padding-left: 10px;
 	width: 100%;
+}
+.level .full{
+	margin-bottom: 3px;
 }
 .always-on-top{
 	/*position: fixed;*/
@@ -180,10 +180,10 @@ h1{
 	cursor: pointer;
 }
 .nav-level:hover{
-	color: #D63131;
+	color: #e30043;
 }
 .nav-level:hover a{
-	color: #D63131;
+	color: #e30043;
 }
 #resource{
 	width: 100%;
@@ -226,13 +226,13 @@ img{
 }
 
 .resource_option:hover{
-	color: #D63131;
+	color: #e30043;
 }
 #new-content-form{
 	width: 400px;
 }
 .content_row:hover{
-	background-color: azure;
+	/*background-color: azure;*/
 }
 
 
@@ -279,13 +279,13 @@ h2{
 	/*margin-left: 40px;*/	
 }
 .resource_option:hover{
-	color: #E6E615;
+	color: #e30043;
 }
 .left-menu-option{
 	max-width: 250px;
 }
 .option:hover{
-	color: #E6E615;
+	color: #e30043;
 }
 .separator{
 	width: 100%;
@@ -366,12 +366,12 @@ table .icon{
 
 }
 .table-1 tr:hover{
-	background-color: none;
+	/*background-color: none;*/
 
 }
 .table-1 td{
 	/*background-color: darkseagreen;*/
-	border-bottom: 1px solid azure;
+	border-bottom: 1px dashed #004964;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
