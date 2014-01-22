@@ -14,7 +14,7 @@
  */
 
 html{
-	background: asset-url('title-background.jpg', image) no-repeat center center fixed; 
+	background: asset-url('textura-papel.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -32,14 +32,14 @@ body{
 }
 a{
 	text-decoration: none;	
-	color: #494;
+	color: #004964;
 }
 
 div{
 	float: left;
 }
 a:hover{
-	color: #E6E615;
+	color: #bbd531;
 }
 
 input{
@@ -48,7 +48,7 @@ input{
 	border: 1px solid #999999;
 }
 h2, h3, h4, h5{
-	color: 444;
+	color: #004964;
 }
 #registration_title{
 	text-align: center;
@@ -71,14 +71,11 @@ h2{
 	margin-right: auto;
 
 }
-.header-title{
-	color: white;
-}
 #website-title{
 	color: peru;
 }
 #title-image{
-	width: 350px;
+	width: 550px;
 }
 
 
@@ -128,7 +125,7 @@ h2{
 	text-align: center;
 }
 #to-website-subtitle a:hover{
-	color: #E6E615;
+	/*color: #bbd531;*/
 }
 
 h1{
@@ -163,7 +160,7 @@ h1{
 	width: 10%;
 }
 .content-1{
-	background-color: azure;
+	/*background-color: azure;*/
 	min-height: 400px;
 }
 .nav-level-1{
@@ -216,15 +213,16 @@ img{
 
 #resources-menu-left{
 	/*min-height: 1600px;*/
-	background-color: honeydew;
+	/*background-color: honeydew;*/
 }
 #resources-menu-right{
-	background-color: honeydew;
+	/*background-color: honeydew;*/
 	/*min-height: 1600px;*/
 }
 #info_div{
-	background-color: honeydew;
+	/*background-color: honeydew;*/
 	padding-bottom: 80px;
+	border-top: 3px dashed #004964;
 }
 
 .resource_option:hover{
@@ -340,6 +338,10 @@ table .icon{
 #new_content_form{
 	width: 240px;
 }
+.form-div .full{
+	margin-bottom: 5px;
+	color: #004964;
+}
 .f-form-label{
 	text-align: right;
 	width: 50%;
@@ -370,6 +372,8 @@ table .icon{
 .table-1 td{
 	/*background-color: darkseagreen;*/
 	border-bottom: 1px solid azure;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .table-1 img{
 	width: 40px;
