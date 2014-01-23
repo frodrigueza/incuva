@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  skip_before_filter :verify_authenticity_token  
 
   def index
   	if !current_member
@@ -18,13 +19,12 @@ class HomeController < ApplicationController
 
   def upload_content
   	c = Content.new
-  	c.name = params[:name]
-  	c.save
-
-  	
 	c.upload_content(params)
+  	c.save
 	@content = c
+
   	respond_to do |format|
+  		format.html { redirect_to request.referer }
   		format.js
   	end
   end
@@ -34,7 +34,6 @@ class HomeController < ApplicationController
   	@content = c
   	c.delete_blob
   	c.destroy
-
   	
   	respond_to do |format|
   		format.js

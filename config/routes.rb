@@ -10,7 +10,7 @@ Incuba::Application.routes.draw do
 
   resources :categories
 
-  get 'members/sign_in' => 'members#sign_up'
+  get '/members/sign_in' => 'members#sign_up'
   
   get 'home/sessions' => 'home#sessions'
   get '/delete_item' => 'home#delete_item', as: :delete_item

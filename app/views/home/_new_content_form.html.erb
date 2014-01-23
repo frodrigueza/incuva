@@ -6,7 +6,7 @@
 		<!-- formulario de url -->
 		<div class="full">
 			<div id="new_content_form">
-				<%= form_tag({action: :upload_content}, multipart: true, remote:true, id:"new_content_form") do %>
+				<%= form_tag({action: :upload_content}, multipart: true, remote:true) do %>
 					<%= hidden_field_tag 'article_id' , a.id %>
 					<div class="full">
 						<div class="f-form-label">
@@ -80,7 +80,8 @@
 	<div class="middle">
 		<div class="full">
 			<div id="new_content_form">
-				<%= form_tag({action: :upload_content}, multipart: true, id:"new_content_form") do %>
+				<%= form_tag({action: :upload_content}, multipart: true) do %>
+					<%= hidden_field_tag 'article_id' , a.id %>
 					<div class="full">
 						<div class="f-form-label">
 							<span></span>

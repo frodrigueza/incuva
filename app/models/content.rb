@@ -23,18 +23,23 @@ class Content < ActiveRecord::Base
 
 	def upload_content(params)
 
-		# vemos si se subio un archivo o un link
+		
+  		self.name = params[:name]
 		if file_up = params[:content_file]
+			# subida desde el PC
 			container = WAZ::Blobs::Container.find('contents')
 			filename = rand(36**32).to_s(36) + File.extname(file_up.original_filename)
 			container.store(filename, file_up.read, file_up.content_type)
 			self.url = container[filename].url
 			self.source = params[:source]
+
 		else
+			# subido desde URL
 			self.url = params[:url]
-			self.extension = params[:extension]
 			self.source = URI.parse(url).host
 		end
+
+		self.extension = params[:extension]
 		Article.find(params[:article_id]).contents << self
 	end
 
