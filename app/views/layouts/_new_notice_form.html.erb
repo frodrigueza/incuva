@@ -1,0 +1,14 @@
+<div class="full">
+	<div class="small-padder">
+		Nueva noticia:
+	</div>
+</div>
+<%= form_tag({controller: "home", action: "create_notice"}, method: "post") do %>
+	<div class="full" id="new-notice-title">
+		<%= text_field_tag 'title','Titulo', required: true%>
+	</div>
+	<div class="full" id="new-notice-body">
+		<%= text_area_tag 'body','Cuerpo', required: true%>
+	</div>
+	<%= submit_tag("Listo")%>
+<% end %>

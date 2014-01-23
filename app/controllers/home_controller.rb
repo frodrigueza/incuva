@@ -11,6 +11,23 @@ class HomeController < ApplicationController
   	@content = Content.new
   end
 
+  def create_notice
+    @notice = Notice.new
+    @notice.title = params[:title]
+    @notice.body = params[:body]
+    @notice.save
+
+    respond_to do |format|
+      format.html { redirect_to request.referer }
+    end
+  end
+
+  def delete_notice
+    Notice.find(params[:notice_id]).destroy
+
+    redirect_to request.referer
+  end
+
   def upload_content
   	c = Content.new
 	c.upload_content(params)

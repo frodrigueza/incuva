@@ -16,6 +16,10 @@ Incuba::Application.routes.draw do
 
   post '/topic_articles' => 'home#topic_articles', as: :topic_articles
 
+  post '/create_notice' => 'home#create_notice'
+  get '/delte_notice' => 'home#delete_notice'
+
+
   get '/delete_content' => 'home#delete_content'
   post '/upload_content' => 'home#upload_content'
 
