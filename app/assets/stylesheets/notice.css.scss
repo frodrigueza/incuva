@@ -1,19 +1,22 @@
 .notice{
-	border-bottom: 1px dashed #444;
+	border-bottom: 1px solid #999999;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .notice-date{
-	padding: 10px;
+	padding-top: 5px;
+	text-align: center;
 }
 .notice-title{
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
 	font-weight: bold;
 }
 .notice-body{
-	margin-bottom: 5px;
+	/*margin-bottom: 5px;*/
 }
 
 #new-notice-title input{
-	width: 80%;
+	width: 90%;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }

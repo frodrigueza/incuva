@@ -1,74 +1,73 @@
 <div class="full header-title fullscreen">
 
-	<!-- title -->
-	<div id="registration-full-div">
-		<div class="padder">
-			<!-- <h1 id="website-title">Incuva</h1> -->
+    <!-- title -->
+    <div id="registration-full-div">
+        <div class="padder">
+            <!-- <h1 id="website-title">Incuva</h1> -->
+            <div class="full">
+                    <div class="span40 centered">
+                            <%= image_tag('logo-Incuva-horizontal.png')%>
+                    </div>
+            </div>
+
+
+
+            
+            <div class="full">
+                    <h4 id="registration_title">Ingresar</h4>
+            </div>
+            <div class="form-div">
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                <div class="full">
+                    <div class="f-form-label">
+                        <span>Email:</span>
+                    </div>
+                    <div class="f-form.input">
+                        <%= f.email_field :email %>
+                    </div>
+                </div>
+                <div class="full">
+                    <div class="f-form-label">
+                          <span>Password:</span>
+                    </div>
+                    <div class="f-form.input">
+                          <%= f.password_field :password %>
+                    </div>
+                </div>
+
+                    <% if devise_mapping.rememberable? -%>
+                              <div class="full">
+                                      <div class="f-form-label">
+                                              <span></span>
+                                      </div>
+                                      <div class="f-form.input">
+                                            <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                                    </div>
+                            </div>
+                    <% end -%>
+                <div class="full">
+                        <%= devise_error_messages! %>
+                </div>
+                <div class="full">
+                          <div class="f-form-label">
+                                  <span></span>
+                          </div>
+                          <div class="f-form.input">
+                                <%= f.submit "Ingresar" %>
+                        </div>
+                </div>
+            <% end %>
 			<div class="full">
-				<div class="span40 centered">
-					<%= image_tag('logo-Incuva-horizontal.png')%>
-				</div>
+			          <div class="f-form-label">
+			                  <span></span>
+			          </div>
+			          <div class="f-form.input">
+            				<%= render "devise/shared/links" %>
+			        </div>
 			</div>
+            <!-- forgot my password -->
 
-
-
-			
-			<div class="full">
-				<h4 id="registration_title">Ingresar</h4>
-			</div>
-			<div class="form-div">
-			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-			  	<div class="full">
-				  	<div class="f-form-label">
-				  		<span>Email:</span>
-				  	</div>
-				  	<div class="f-form.input">
-					  	<%= f.email_field :email %>
-					</div>
-				</div>
-			  	<div class="full">
-				  	<div class="f-form-label">
-				  		<span>Password:</span>
-				  	</div>
-				  	<div class="f-form.input">
-					  	<%= f.password_field :password %>
-					</div>
-				</div>
-
-					<% if devise_mapping.rememberable? -%>
-					  	<div class="full">
-						  	<div class="f-form-label">
-						  		<span></span>
-						  	</div>
-						  	<div class="f-form.input">
-								<%= f.check_box :remember_me %> <%= f.label :remember_me %>
-							</div>
-						</div>
-					<% end -%>
-				<div class="full">
-					<%= devise_error_messages! %>
-				</div>
-				<div class="full">
-				  	<div class="f-form-label">
-				  		<span></span>
-				  	</div>
-				  	<div class="f-form.input">
-						<%= f.submit "Ingresar" %>
-					</div>
-				</div>
-			<% end %>
-
-			<!-- forgot my password -->
-			<%= render "devise/shared/links" %>
-
-			</div>
-
-
-
-
-		
-
-
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 </div>

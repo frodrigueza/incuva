@@ -8,7 +8,7 @@
 	</div>
 
 	
-	<% if current_member && current_member.is_admin %>
+	<% if current_member.is_admin %>
 		<% topic.articles.order(:title).each do |a| %>
 			<div class="full article_option" id="article_<%= a.id %>">
 
@@ -55,8 +55,8 @@
 
 
 
-	<% else %>
 	<!-- common user view -->
+	<% else %>
 
 		<% topic.articles.each do |a| %>
 			<% if a.contents.count > 0 %>
@@ -71,12 +71,12 @@
 					</div>
 				</div>
 				<div class="full div_option" id="div_option_<%= a.id %>">
-					<div class="padder">
+					<div class="padder non-floater">
 						<table class="full table-1">
 							<tr>
 								<th class="icon"></th>
 								<th class="index">Recurso</th>
-								<th></th>
+								<th class="index">Fuente</th>
 							</tr>
 						
 							<!-- article contents -->
@@ -84,19 +84,7 @@
 								<tr>
 									<td><div class="little-img-container"><%= image_tag(c.image) %></div></td>
 									<td class="index"><%= link_to c.name, c.url , :target => "_blank"%></td>
-									<td>
-
-
-										<!-- delete content icon cross -->
-										<% if current_member && current_member.is_admin %>
-											<div class="little-img-container">
-											<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_content", content_id: c.id}, class: "delete_icon"%>
-											</div>
-										<% end %>
-
-
-
-									</td>
+									<td class="index"><%= c.source %></td>
 								</tr>
 							<% end %>
 						</table>
