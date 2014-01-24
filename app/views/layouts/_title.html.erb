@@ -1,35 +1,22 @@
-<div class="full header-title">
-	
-	<!-- menu -->
-	<div class="full">
-		<div class="right">
-			<div class="full">
-				<div class="right">
-					<div class="full">
-						<div class="small-padder">
-							<b><%= current_member.f_name %></b>
-						</div>
-					</div>
-					<div class="full">
-						<div class="small-padder">
-							<%= link_to "Log out", destroy_member_session_path, :method => :delete  %>
-						</div>
-					</div>
+<div class="full bs-section">
+	<div class="section-content">
+		
+		<!-- menu -->
+		<div class="full">
+			<%= render 'layouts/social'%>
+			<%= render 'layouts/session'%>
+		</div>
+
+		<!-- title -->
+		<div class="full">
+			<div class="padder non-floater">
+				<div class="full">
+					<div id="title-image" class="centered">
+						<%= image_tag('logo-Incuva-horizontal.png') %>
+					</div> 
 				</div>
+				<h2 id="to-website-subtitle">Un proyecto de <%= link_to 'Elige Educar', 'http://www.eligeeducar.cl' , :target => "_blank"%></h2>
 			</div>
 		</div>
 	</div>
-
-	<!-- title -->
-	<div class="full">
-		<div class="padder non-floater">
-			<div class="full">
-				<div id="title-image" class="centered">
-					<%= image_tag('logo-Incuva-horizontal.png')%>
-				</div> 
-			</div>
-			<h2 id="to-website-subtitle">Un proyecto de <%= link_to 'Elige Educar', 'http://www.eligeeducar.cl' , :target => "_blank"%></h2>
-		</div>
-	</div>
-
 </div>

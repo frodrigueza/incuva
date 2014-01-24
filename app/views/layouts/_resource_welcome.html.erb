@@ -2,9 +2,11 @@
 	<div class="full section med-img">
 		<h2>Escoge una asignatura!</h2>
 	</div>
-	<% Notice.all.order(:created_at).reverse.each do |n| %>
-		<%= render 'layouts/notice' , locals: { notice_id: n.id }%>
-	<% end %>
+	<div class="full" id="notices">
+		<% Notice.all.order(:created_at).reverse.take(5).each do |n| %>
+			<%= render 'layouts/notice' , locals: { notice_id: n.id }%>
+		<% end %>
+	</div>
 
 	<% if current_member.is_admin %>
 		<%= render 'layouts/new_notice_form' %>
