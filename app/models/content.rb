@@ -13,8 +13,6 @@ class Content < ActiveRecord::Base
 			return "image.png"
 		elsif self.extension == 'rar'
 			return "compressed.png"
-		elsif self.extension == 'ppt'
-			return "powerpoint.png"
 		else
 			return "file.png"
 		end
@@ -22,12 +20,12 @@ class Content < ActiveRecord::Base
 	end
 
 	def content_class
-		if self.extension == 'pdf' || self.extension == 'ppt'
+		if self.extension == 'pdf'
 			return "fancybox iframe"
 		elsif self.extension == 'jpg'
 			return "fancybox"
 		elsif self.extension == 'mp4'
-			return "fancybox video"
+			return "fancybox-video"
 		else
 			return ''
 		end

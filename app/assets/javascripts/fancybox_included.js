@@ -1,3 +1,3 @@
-jQuery(function() {
+$(function(){
   $("a.fancybox").fancybox();
 });
