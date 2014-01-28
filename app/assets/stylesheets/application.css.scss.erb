@@ -15,7 +15,7 @@
  */
 
 html{
-	background: asset-url('textura-papel.jpg') no-repeat center center fixed; 
+	background: url(<%= asset_data_uri 'textura-papel.jpg' %>) no-repeat center center fixed; 
 	/*background-color: azure;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -247,11 +247,15 @@ img{
 #session{
 	text-align: right;
 }
+#download_icon img{
+	width: 25px;
+	height: 25px;
+}
 
 h2{
 	font-size: 40px;
 }
-.section{
+.section-1{
 	border-bottom: 1px solid #999999;
 	padding-bottom: 10px;
 }
