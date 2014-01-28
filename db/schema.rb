@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 20140124124136) do
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
 
   create_table "notices", force: true do |t|
-    t.string   "title"
-    t.string   "body"
+    t.text     "title"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
