@@ -1,0 +1,16 @@
+#alerts-notices{
+	text-align: center;
+	position: fixed;
+	background-color: #444;
+	font-weight: bold;
+}
+#notice{
+	color: greenyellow;
+}
+#alert{
+	color: red;
+}
+.notice-alert{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

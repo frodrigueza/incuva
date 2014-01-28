@@ -9,6 +9,7 @@
 
 # Members
 Member.create(email: "admin@incuva.cl", password:"adminincuva", :password_confirmation => "adminincuva", is_admin: true, name: "Administrador", lastname: "Incuva")
+Member.create(email: "visita@incuva.cl", password:"visitaincuva", :password_confirmation => "visitaincuva", is_admin: true, name: "Visita", lastname: "Incuva")
 
 # grades
 12.times do |t|
@@ -24,17 +25,11 @@ Category.create(name: "Quimica")
 
 # topics
 Topic.create(title: "Algebra")
-Topic.create(title: "Calculo")
-Topic.create(title: "Estadistica")
-Topic.create(title: "Geometria analitica")
 
 # articles
 Article.create(level: 1, title: "Productos Notables")
 Article.create(level: 1, title: "Factorizaciones")
 Article.create(level: 1, title: "Fracciones Algebraicas")
-
-# contents
-Content.create(name: "Introduccion")
 
 Grade.all.each do |g|
 	Category.all.each do |c|

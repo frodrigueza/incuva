@@ -6,6 +6,11 @@
 	</div>
 	<div class="full">
 		<div class="small-padder non-floater">
+			<b><%= current_member.email %></b>
+		</div>
+	</div>
+	<div class="full">
+		<div class="small-padder non-floater">
 			<%= link_to "Log out", destroy_member_session_path, :method => :delete  %>
 		</div>
 	</div>

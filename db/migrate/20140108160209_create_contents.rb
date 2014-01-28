@@ -1,8 +1,8 @@
 class CreateContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
-      t.string :url
-      t.string :name
+      t.text :url
+      t.text :name
       t.references :article
 
       t.timestamps

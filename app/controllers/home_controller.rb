@@ -6,6 +6,9 @@ class HomeController < ApplicationController
   		redirect_to members_sign_in_path
   	end
 
+    # flash.now[:notice] = 'Message sent!'
+    # flash.now[:alert] = 'Error while sending message!'
+
   	@grades = Grade.all
   	@categories = Category.all
   	@content = Content.new
@@ -18,7 +21,7 @@ class HomeController < ApplicationController
     @notice.save
 
     respond_to do |format|
-      format.html { redirect_to request.referer }
+      format.html { redirect_to(request.referer, notice: "Noticia creada") }
     end
   end
 
@@ -99,10 +102,10 @@ class HomeController < ApplicationController
   		# Category.find(params[:category_id]).destroy
   		@category_id = params[:category_id]
   	elsif params[:topic_id]
-  		# Topic.find(params[:topic_id]).destroy
+  		Topic.find(params[:topic_id]).destroy
   		@topic_id = params[:topic_id]
   	elsif params[:article_id]
-  		# Article.find(params[:article_id]).destroy
+  		Article.find(params[:article_id]).destroy
   		@article_id = params[:article_id]
   	end
   	

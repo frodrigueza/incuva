@@ -34,6 +34,7 @@
 							<th class="index">Recurso</th>
 							<th class="index">Fuente</th>
 							<th></th>
+							<th></th>
 						</tr>
 					
 						<!-- article contents -->
@@ -77,15 +78,12 @@
 								<th class="icon"></th>
 								<th class="index">Recurso</th>
 								<th class="index">Fuente</th>
+								<th></th>
 							</tr>
 						
 							<!-- article contents -->
 							<% a.contents.each do |c| %>
-								<tr>
-									<td><div class="little-img-container"><%= image_tag(c.image) %></div></td>
-									<td class="index"><%= link_to c.name, c.url , :target => "_blank"%></td>
-									<td class="index"><%= c.source %></td>
-								</tr>
+								<%= render 'content', locals: { content_id: c.id }%>
 							<% end %>
 						</table>
 						<!-- formulario para subir un nuevo archivo -->
