@@ -9,7 +9,7 @@
 					<%= image_tag("grade_icon.png")%>
 				</div>
 				<div class="nav-level left" id="level_2_<%= g.id %>">
-					<%= g.f_level %>
+					<%= g.f_level + ' (' + g.contents.count.to_s + ')'%>
 				</div>
 			</div>
 

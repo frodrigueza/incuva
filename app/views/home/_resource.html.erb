@@ -18,7 +18,7 @@
 				</div>
 				<!-- article title -->
 				<div class="option resource_option" id="option_<%= a.id %>">
-					<h3><%= a.title %></h3>
+					<h3><%= a.title + ' (' + a.contents.count.to_s + ')' %></h3>
 				</div>
 
 				<!-- delete option -->

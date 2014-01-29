@@ -11,7 +11,7 @@
 					<%= image_tag("topic_icon.png")%>
 				</div>
 				<div class="left nav-level left-menu-option" id="level_3_<%= t.id %>">
-					<%= link_to t.title, controller: "home", action: "resource", topic_id: t.id, remote: true%>
+					<%= link_to t.title + ' (' + t.contents.count.to_s + ')', controller: "home", action: "resource", topic_id: t.id, remote: true%>
 				</div>
 				<% if current_member && current_member.is_admin %>
 					<div class="little-img-container delete-icon-div">

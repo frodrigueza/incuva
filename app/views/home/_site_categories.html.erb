@@ -7,7 +7,7 @@
 					<%= image_tag("category_icon.png")%>
 				</div>
 				<div class="left  nav-level" id="level_1_<%= c.id %>">
-					<%= c.name %>
+					<%= c.name + ' (' + c.contents.count.to_s + ')'%>
 				</div>
 				<% if current_member && current_member.is_admin %>
 				<div class="little-img-container delete-icon-div">
@@ -36,7 +36,7 @@
 						<%= image_tag("category_icon.png")%>
 					</div>
 					<div class="left  nav-level" id="level_1_<%= c.id %>">
-						<%= c.name %>
+						<%= c.name + ' (' + c.contents.count.to_s + ')'%>
 					</div>
 					<% if current_member && current_member.is_admin %>
 					<div class="little-img-container">
