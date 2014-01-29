@@ -16,15 +16,15 @@ Member.create(email: "visita@incuva.cl", password:"visitaincuva", :password_conf
 	Grade.create(level: t+1)
 end
 # categories
-Category.create(name: "Matematicas")
+Category.create(name: "Matemáticas")
 Category.create(name: "Lenguaje")
 Category.create(name: "Historia")
-Category.create(name: "Fisica")
-Category.create(name: "Biologia")
-Category.create(name: "Quimica")
+Category.create(name: "Física")
+Category.create(name: "Biología")
+Category.create(name: "Química")
 
 # topics
-Topic.create(title: "Algebra")
+Topic.create(title: "Álgebra")
 
 # articles
 Article.create(level: 1, title: "Productos Notables")
