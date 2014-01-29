@@ -1,26 +1,37 @@
 <% notice = Notice.find(locals[:notice_id]) %>
+<tr>
+	<td class="span10" id="notice-date-td">
+		<%= notice.f_date.split(' ').first + ' ' + notice.f_date.split(' ')[1] %>
+		<%= notice.f_date.split(' ').last %>
+	</td>
+	<td class="span80">
+		<div class="full" id="notice-title">
+			<%= notice.title %>
+		</div>
+		<div class="full">
+			<%= notice.body.html_safe %>
+		</div>
+	</td>
+	<td class="span10">
+		<div class="little-img-container delete-icon-div small-padder" id="delete-notice-icon">
+			<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_notice", notice_id: notice.id}, class:"delete_icon" %>
+		</div>
+	</td>
+</tr>
+
+
+<!-- 
 <div class="full notice" id="notice_<%= notice.id %>">
 	<div class="span10">
 		<div class="notice-date">
-			<div class="full">
-				<%= notice.f_date.split(' ').first + ' ' + notice.f_date.split(' ')[1] %>
-			</div>
-			<div class="full">
-				<%= notice.f_date.split(' ').last %>
-			</div>
 		</div>
 	</div>
 	<div class="span80">
 		<div class="small-padder non-floater">
-			<div class="full notice-title"><%= notice.title %></div>
-			<div class="full notice-body"><%= notice.body.html_safe %></div>
 		</div>
 	</div>
 	<div class="span10">
 		<div class="full">
-			<div class="little-img-container delete-icon-div small-padder" id="delete-notice-icon">
-				<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_notice", notice_id: notice.id}, class:"delete_icon" %>
-			</div>
 		</div>
 	</div>
-</div>
+</div> -->

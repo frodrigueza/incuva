@@ -3,9 +3,11 @@
 		<h2>Escoge una asignatura!</h2>
 	</div>
 	<div class="full" id="notices">
-		<% Notice.all.order(:created_at).reverse.take(5).each do |n| %>
-			<%= render 'layouts/notice' , locals: { notice_id: n.id }%>
-		<% end %>
+		<table class="full" id="notice-table">
+			<% Notice.all.order(:created_at).reverse.take(5).each do |n| %>
+				<%= render 'layouts/notice' , locals: { notice_id: n.id }%>
+			<% end %>
+		</table>
 	</div>
 
 	<% if current_member.is_admin %>
