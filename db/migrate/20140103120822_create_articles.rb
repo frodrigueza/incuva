@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration
     	t.integer :level
     	t.references :topic
     	t.text :title
+    	t.text :description
 
       t.timestamps
     end

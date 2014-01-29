@@ -57,6 +57,7 @@ class HomeController < ApplicationController
   def topic_articles
   	a = Article.new
   	a.title = params[:title]
+    a.description = params[:description]
   	a.save
   	@topic = Topic.find(params[:topic_id])
   	@topic.articles << a

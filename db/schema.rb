@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140124124136) do
     t.integer  "level"
     t.integer  "topic_id"
     t.text     "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

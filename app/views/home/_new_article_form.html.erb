@@ -5,7 +5,8 @@
 	</div>
 	<div class="resource_option">
 		<%= form_tag({controller: "home", action: "topic_articles"}, method: "post") do %>
-			<h3><%= text_field_tag 'title','Crear nuevo articulo' , required: true %></h3>
+			<h3><%= text_field_tag 'title','Titulo' , required: true %></h3>
+			<h3><%= text_area_tag 'description','Descripcion' , required: true %></h3>
 			<%= hidden_field_tag('topic_id', topic.id)%>
 			<%= submit_tag("Crear")%>
 		<% end %>
