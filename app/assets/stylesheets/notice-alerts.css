@@ -3,6 +3,7 @@
 	position: fixed;
 	background-color: #444;
 	font-weight: bold;
+	margin-bottom: 50px;
 }
 #notice{
 	color: greenyellow;
@@ -13,4 +14,7 @@
 .notice-alert{
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+.first-full{
+	margin-top: 50px;
 }
