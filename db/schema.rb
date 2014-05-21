@@ -62,6 +62,10 @@ ActiveRecord::Schema.define(version: 20140124124136) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "zone"
+    t.string   "school_dependence"
+    t.string   "interest_area"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_admin",               default: false

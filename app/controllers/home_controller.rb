@@ -54,10 +54,6 @@ class HomeController < ApplicationController
   	end
   end
 
-  def stads
-    
-  end
-
   def topic_articles
   	a = Article.new
   	a.title = params[:title]

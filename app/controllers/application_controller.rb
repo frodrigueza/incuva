@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def export_members
+    File.new("data.csv", "w+") do |f|
+      Member.all.each do |m|
+        f << [m.name, m.lastname, m.email].join(", ") + "\n"
+      end
+    end
+  end
 
   protected
 

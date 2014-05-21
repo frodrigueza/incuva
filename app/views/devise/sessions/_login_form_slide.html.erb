@@ -16,45 +16,28 @@
             <div class="full">
                     <h4 id="registration_title">Ingresar</h4>
             </div>
-            <div class="form-div">
+            <div class="full">
             <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-                <div class="full">
-                    <div class="f-form-label">
-                        <span>Email:</span>
-                    </div>
-                    <div class="f-form.input">
-                        <%= f.email_field :email %>
-                    </div>
-                </div>
-                <div class="full">
-                    <div class="f-form-label">
-                          <span>Password:</span>
-                    </div>
-                    <div class="f-form.input">
-                          <%= f.password_field :password %>
-                    </div>
-                </div>
-
-                    <% if devise_mapping.rememberable? -%>
-                              <div class="full">
-                                      <div class="f-form-label">
-                                              <span></span>
-                                      </div>
-                                      <div class="f-form.input">
-                                            <%= f.check_box :remember_me %> <%= f.label :remember_me %>
-                                    </div>
-                            </div>
-                    <% end -%>
+            <table class="full">
+                <tr>
+                    <td style="width: 50%;"></td>
+                    <td style="width: 50%;"></td>
+                </tr>
+                <tr>
+                    <td class="text-right">Email:</td>
+                    <td><%= f.email_field :email %></td>
+                </tr>
+                <tr>
+                    <td class="text-right">Password:</td>
+                    <td><%= f.password_field :password %></td>
+                </tr>
+                <tr>
+                    <td class="text-right"></td>
+                    <td><%= f.submit 'Ingresar' %></td>
+                </tr>
+            </table>
                 <div class="full">
                         <%= devise_error_messages! %>
-                </div>
-                <div class="full">
-                          <div class="f-form-label">
-                                  <span></span>
-                          </div>
-                          <div class="f-form.input">
-                                <%= f.submit "Ingresar" %>
-                        </div>
                 </div>
             <% end %>
 			<div class="full">

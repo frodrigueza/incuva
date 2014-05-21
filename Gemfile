@@ -15,6 +15,9 @@ end
 # heroku gem
 gem 'heroku'
 
+#spreadsheets excel
+gem 'spreadsheet'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
