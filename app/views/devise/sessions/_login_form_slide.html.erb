@@ -10,46 +10,38 @@
                     </div>
             </div>
 
-
-
-            
             <div class="full">
-                    <h4 id="registration_title">Ingresar</h4>
-            </div>
-            <div class="full">
-            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-            <table class="full">
-                <tr>
-                    <td style="width: 50%;"></td>
-                    <td style="width: 50%;"></td>
-                </tr>
-                <tr>
-                    <td class="text-right">Email:</td>
-                    <td><%= f.email_field :email %></td>
-                </tr>
-                <tr>
-                    <td class="text-right">Password:</td>
-                    <td><%= f.password_field :password %></td>
-                </tr>
-                <tr>
-                    <td class="text-right"></td>
-                    <td><%= f.submit 'Ingresar' %></td>
-                </tr>
-            </table>
-                <div class="full">
-                        <%= devise_error_messages! %>
-                </div>
-            <% end %>
-			<div class="full">
-			          <div class="f-form-label">
-			                  <span></span>
-			          </div>
-			          <div class="f-form.input">
-            				<%= render "devise/shared/links" %>
-			        </div>
-			</div>
-            <!-- forgot my password -->
-
+                <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td><h4>Ingresar</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">Email:</td>
+                        <td><%= f.email_field :email %></td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">Password:</td>
+                        <td><%= f.password_field :password %></td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"></td>
+                        <td><%= f.submit 'Ingresar' %></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><%= devise_error_messages! %></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><%= render "devise/shared/links" %></td>
+                    </tr>
+                </table>
+                    <div class="full">
+                            <%= devise_error_messages! %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
