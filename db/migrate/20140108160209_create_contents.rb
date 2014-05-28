@@ -4,6 +4,7 @@ class CreateContents < ActiveRecord::Migration
       t.text :url
       t.text :name
       t.references :article
+      t.integer :content_type
 
       t.timestamps
     end

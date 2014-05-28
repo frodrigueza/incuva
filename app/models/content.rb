@@ -21,7 +21,7 @@ class Content < ActiveRecord::Base
 
 	def content_class
 		if self.extension == 'pdf'
-			return "fancybox iframe"
+			return "fancybox iframe" || self.extension == 'ppt'
 		elsif self.extension == 'jpg'
 			return "fancybox"
 		elsif self.extension == 'mp4'
@@ -51,7 +51,12 @@ class Content < ActiveRecord::Base
 		end
 
 		self.extension = params[:extension]
-		Article.find(params[:article_id]).contents << self
+		if params[:article_id] != '-1'
+			Article.find(params[:article_id]).contents << self
+		else
+			self.content_type = params[:content_type]
+		end
+
 	end
 
 	def delete_blob

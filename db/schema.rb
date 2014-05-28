@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(version: 20140124124136) do
 
   create_table "articles", force: true do |t|
-    t.integer  "level"
     t.integer  "topic_id"
     t.text     "title"
     t.text     "description"
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140124124136) do
     t.text     "url"
     t.text     "name"
     t.integer  "article_id"
+    t.integer  "content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "extension"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140124124136) do
 
   create_table "grades", force: true do |t|
     t.integer  "level"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

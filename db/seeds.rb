@@ -9,12 +9,7 @@
 
 # Members
 Member.create(email: "admin@incuva.cl", password:"adminincuva", :password_confirmation => "adminincuva", is_admin: true, name: "Administrador", lastname: "Incuva")
-Member.create(email: "visita@incuva.cl", password:"visitaincuva", :password_confirmation => "visitaincuva", is_admin: true, name: "Visita", lastname: "Incuva")
 
-# grades
-12.times do |t|
-	Grade.create(level: t+1)
-end
 # categories
 Category.create(name: "Matemáticas")
 Category.create(name: "Lenguaje")
@@ -23,29 +18,10 @@ Category.create(name: "Física")
 Category.create(name: "Biología")
 Category.create(name: "Química")
 
-# topics
-Topic.create(title: "Álgebra")
+Category.all.each do |c|
 
-# articles
-Article.create(level: 1, title: "Productos Notables")
-Article.create(level: 1, title: "Factorizaciones")
-Article.create(level: 1, title: "Fracciones Algebraicas")
-
-Grade.all.each do |g|
-	Category.all.each do |c|
-		g.categories << c
+	# grades
+	12.times do |t|
+		c.grades << Grade.create(level: t+1)
 	end
-end
-
-Topic.all.each do |t|
-	Category.first.topics << t
-	Grade.find(9).topics << t
-end
-
-Article.all.each do |a|
-	Topic.first.articles << a
-end
-
-Content.all.each do |c|
-	Article.first.contents << c
 end

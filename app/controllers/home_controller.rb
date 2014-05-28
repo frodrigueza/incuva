@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   # before_filter :verify_authenticity_token  
 
+
   def index
   	if !current_member
   		redirect_to members_sign_in_path
@@ -33,9 +34,8 @@ class HomeController < ApplicationController
 
   def upload_content
   	c = Content.new
-	c.upload_content(params)
-  	c.save
-	@content = c
+  	c.upload_content(params)
+    	c.save
 
   	respond_to do |format|
   		format.html { redirect_to request.referer }
@@ -51,6 +51,7 @@ class HomeController < ApplicationController
   	
   	respond_to do |format|
   		format.js
+      format.html { redirect_to(request.referer, notice: "Contenido eliminado") }
   	end
   end
 
@@ -85,14 +86,18 @@ class HomeController < ApplicationController
 	  end
   end
 
+  def material
+    @contents = Content.where(content_type: params[:format])
+  end
+
   def site_categories
   	c = Category.new
   	c.name = params[:name]
   	c.save
 
-  	Grade.all.each do |g|
-  		c.grades << g
-  	end
+  	12.times do |t|
+      c.grades << Grade.create(level: t+1)
+    end
 
   	redirect_to request.referer
 

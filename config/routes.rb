@@ -29,6 +29,7 @@ Incuba::Application.routes.draw do
   post '/grade_topics' => 'home#grade_topics', as: :grade_topics  
 
   get "home/index"
+  get "/material" => 'home#material', as: :home_material
 
   root 'home#index'
 

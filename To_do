@@ -11,3 +11,17 @@ Formulario:
 
 
 
+
+
+ Contents:
+ 	content_type:
+ 		1 = videos
+ 		2 = infografia
+ 		3 = cartas al director
+ 		4 = columnas
+ 		5 = estudios
+ 		6 = noticias 
+ 		7 = spots
+ 		8 = presentacion
+
+

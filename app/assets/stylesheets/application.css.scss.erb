@@ -15,7 +15,7 @@
  */
 
 html{
-	background: url(<%= asset_data_uri 'textura-papel.jpg' %>) no-repeat center center fixed; 
+	background: url(<%= asset_data_uri 'textura-papel.jpg' %>); 
 	/*background-color: azure;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -84,11 +84,12 @@ h2{
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+
 #website-title{
 	color: peru;
 }
 #title-image{
-	width: 550px;
+	width: 300px;
 }
 
 
@@ -238,7 +239,6 @@ img{
 #info_div{
 	/*background-color: honeydew;*/
 	padding-bottom: 80px;
-	border-top: 3px dashed #004964;
 }
 
 .resource_option:hover{
@@ -345,6 +345,7 @@ table .icon{
 	width: 30px;
 }
 
+
 #secondary_info #title{
 	color: white;
 }
@@ -425,4 +426,28 @@ table{
 #article_description{
 	padding-left: 10px;
 	margin-bottom: 10px;
+}
+#menu_bar_div img{
+	width: 25px;
+	height: 25px;
+	margin-right: 0px;
+}
+#menu_bar_div td{
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 16px;
+	color: #444;
+	padding: 5px 10px 5px 10px;
+	border-right: 1px solid gray;
+}
+
+#menu_bar_div a:hover{
+	color: #e30043;
+	cursor: pointer;
+}
+#menu_bar_div a{
+	color: #444;
+}
+#content_form_div{
+	margin-top: 50px;
 }

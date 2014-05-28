@@ -1,0 +1,34 @@
+<div class="full" id="info_div">
+	<div class="section-content">
+		<div class="full">
+
+			<div class="full">
+				<h3><%= content_type_name(params[:format])%></h3>
+			</div>
+
+			<div class="full">
+				<table>
+					<% @contents.each do |c| %>
+						<tr>
+							<td>&bull;</td>
+							<td><%= link_to c.name, c.url , {class:c.content_class} %></td>
+							<% if current_member.is_admin %>
+								<td><%= link_to 'eliminar', {controller: "home", action: "delete_content", content_id: c.id}	, class:"delete_icon" %></td>
+							<% end %>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+
+
+			<% if current_member.is_admin %>
+				<div class="full" id="content_form_div">
+					<div class="full">
+						Agregar contenido a <%= content_type_name(params[:format])%>
+					</div>
+					<%= render 'content_form' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

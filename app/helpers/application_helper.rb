@@ -46,4 +46,40 @@ module ApplicationHelper
 			'Municipalizado'
 		]
 	end
+
+	def content_types
+		array = [
+			'Videos',
+			'Infografías',
+			'Cartas al director',
+			'Columnas',
+			'Estudios',
+			'Noticias',
+			'Spots',
+			'Presentaciones'
+		]
+		
+	end
+
+	def content_type_name(i)
+		case i.to_i
+		when 1
+			return 'Videos'
+		when 2
+			return 'Infografías'
+		when 3
+			return 'Cartas al director'
+		when 4
+			return 'Columnas'
+		when 5
+			return 'Estudios'
+		when 6
+			return 'Noticias'
+		when 7
+			return 'Spots'
+		when 8
+			return 'Presentaciones'
+		end
+		
+	end
 end

@@ -1,0 +1,151 @@
+<div class="separator"></div>
+<div class="full">
+  <div class="middle">
+    <!-- formulario de url -->
+    <div class="full">
+      <div id="new_content_form">
+        <%= form_tag({action: :upload_content}, multipart: true, remote:true) do %>
+          <%= hidden_field_tag 'article_id' , -1 %>
+          <%= hidden_field_tag 'content_type' , params[:format] %>
+          
+          <div class="full">
+            <div class="f-form-label">
+              <span></span>
+            </div>
+            <div class="f-form-input">
+              <b>Subir por URL</b>
+            </div>
+          </div>
+
+          <div class="full">
+            <div class="f-form-label">
+              <span>Titulo:</span>
+            </div>
+            <div class="f-form-input">
+              <%= text_field_tag 'name','', required: true%>
+            </div>
+          </div>
+
+          <div class="full">
+            <div class="f-form-label">
+              <span>URL:</span>
+            </div>
+            <div class="f-form-input">
+              <%= text_field_tag 'url','', required: true %>
+            </div>
+          </div>
+
+          <div class="full">
+            <div class="f-form-label">
+              <span>Tipo archivo:</span>
+            </div>
+            <div class="f-form-input">
+              <div class="full">
+                <%= radio_button_tag(:extension, "pdf", checked: true) %>
+                pdf
+              </div><div class="full">
+                <%= radio_button_tag(:extension, "mp3") %>
+                audio
+              </div><div class="full">
+                <%= radio_button_tag(:extension, "mp4") %>
+                video
+              </div><div class="full">
+                <%= radio_button_tag(:extension, "jpg") %>
+                imagen
+              </div>
+              <div class="full">
+                <%= radio_button_tag(:extension, "rar") %>
+                zip - rar
+              </div>
+            </div>
+          </div>
+
+          <div class="full">
+            <div class="f-form-label">
+            </div>
+            <div class="f-form-input">
+              <%= submit_tag 'Listo'%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- formulario de archivo -->
+  <div class="middle">
+    <div class="full">
+      <div id="new_content_form">
+        <%= form_tag({action: :upload_content}, multipart: true) do %>
+          <%= hidden_field_tag 'article_id' , -1 %>
+          <%= hidden_field_tag 'content_type' , params[:format] %>
+          <div class="full">
+            <div class="f-form-label">
+              <span></span>
+            </div>
+            <div class="f-form-input">
+              <b>Subir desde PC</b>
+            </div>
+          </div>
+          <div class="full">
+            <div class="f-form-label">
+              <span>Titulo:</span>
+            </div>
+            <div class="f-form-input">
+              <%= text_field_tag 'name','', required: true%>
+            </div>
+          </div>
+          <div class="full">
+            <div class="f-form-label">
+              <span>Archivo:</span>
+            </div>
+            <div class="f-form-input">
+              <%= file_field_tag 'content_file',required: true %>
+            </div>
+          </div>
+          <div class="full">
+            <div class="f-form-label">
+              <span>Fuente:</span>
+            </div>
+            <div class="f-form-input">
+              <%= text_field_tag 'source','InCuVa', required: true%>
+            </div>
+          </div>
+          <div class="full">
+            <div class="f-form-label">
+              <span>Tipo archivo:</span>
+            </div>
+            <div class="f-form-input">
+              <div class="full">
+                <%= radio_button_tag(:extension, "pdf", checked: true) %>
+                documento
+              </div><div class="full">
+                <%= radio_button_tag(:extension, "mp3") %>
+                audio
+              </div><div class="full">
+                <%= radio_button_tag(:extension, "mp4") %>
+                video
+              </div><div class="full">
+                <%= radio_button_tag(:extension, "jpg") %>
+                imagen
+              </div>
+              <div class="full">
+                <%= radio_button_tag(:extension, "rar") %>
+                zip - rar
+              </div>
+              <div class="full">
+                <%= radio_button_tag(:extension, "ppt") %>
+                Power point
+              </div>
+            </div>
+          </div>
+            <div class="f-form-label"></div>
+            <div class="f-form-input">
+              <%= submit_tag 'Listo'%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

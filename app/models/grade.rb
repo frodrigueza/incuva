@@ -1,6 +1,5 @@
 class Grade < ActiveRecord::Base
-	has_many :categories, through: :grade_categories
-	has_many :grade_categories, dependent: :destroy
+	belongs_to :category
 	has_many :topics, dependent: :destroy
 
 	def f_level
