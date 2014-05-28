@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140124124136) do
 
   create_table "contents", force: true do |t|
     t.text     "url"
+    t.text     "description"
     t.text     "name"
     t.integer  "article_id"
     t.integer  "content_type"

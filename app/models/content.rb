@@ -55,6 +55,7 @@ class Content < ActiveRecord::Base
 			Article.find(params[:article_id]).contents << self
 		else
 			self.content_type = params[:content_type]
+			self.description = params[:description]
 		end
 
 	end

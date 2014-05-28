@@ -1,11 +1,14 @@
 class HomeController < ApplicationController
-  # before_filter :verify_authenticity_token  
+  before_action :require_login
 
+  def require_login
+    if !current_member
+      redirect_to members_sign_in_path
+    end
+  end
 
   def index
-  	if !current_member
-  		redirect_to members_sign_in_path
-  	end
+  	
 
     # flash.now[:notice] = 'Message sent!'
     # flash.now[:alert] = 'Error while sending message!'

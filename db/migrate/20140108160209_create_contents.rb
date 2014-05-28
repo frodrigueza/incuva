@@ -2,6 +2,7 @@ class CreateContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
       t.text :url
+      t.text :description
       t.text :name
       t.references :article
       t.integer :content_type
