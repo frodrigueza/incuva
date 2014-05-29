@@ -1,17 +1,13 @@
 <div class="span20" id="session">
-	<div class="full">
-		<div class="small-padder non-floater">
-			<b><%= current_member.f_name %></b>
-		</div>
-	</div>
-	<div class="full">
-		<div class="small-padder non-floater">
-			<b><%= current_member.email %></b>
-		</div>
-	</div>
-	<div class="full">
-		<div class="small-padder non-floater">
-			<%= link_to "Log out", destroy_member_session_path, :method => :delete  %>
-		</div>
-	</div>
+	<table>
+		<tr>
+			<td><b><%= current_member.f_name %></b></td>
+		</tr>
+		<tr>
+			<td><b><%= current_member.email %></b></td>
+		</tr>
+		<tr>
+			<td><%= link_to "Log out", destroy_member_session_path, :method => :delete  %></td>
+		</tr>
+	</table>
 </div>

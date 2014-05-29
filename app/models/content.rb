@@ -13,6 +13,8 @@ class Content < ActiveRecord::Base
 			return "image.png"
 		elsif self.extension == 'rar'
 			return "compressed.png"
+		elsif self.extension == 'ppt'
+			return "powerpoint.png"
 		else
 			return "file.png"
 		end
