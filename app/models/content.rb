@@ -20,12 +20,14 @@ class Content < ActiveRecord::Base
 	end
 
 	def content_class
-		if self.extension == 'pdf'
-			return "fancybox iframe" || self.extension == 'ppt'
+		if self.extension == 'pdf' || self.extension == 'ppt'
+			return "fancybox iframe"
 		elsif self.extension == 'jpg'
 			return "fancybox"
 		elsif self.extension == 'mp4'
 			return "fancybox-video"
+		elsif self.extension == 'link'
+			return "link"
 		else
 			return ''
 		end

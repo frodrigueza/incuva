@@ -1,7 +1,7 @@
 $(function(){
 
 	
-	$("a.fancybox").fancybox();
+	
 
 	$(".fancybox-video").click(function() {
 		$.fancybox({

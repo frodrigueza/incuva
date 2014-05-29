@@ -11,7 +11,7 @@
 					<% @contents.each do |c| %>
 						<tr>
 							<td style="vertical-align: top">&bull;</td>
-							<td><b><%= link_to c.name, c.url , {class:c.content_class} %></b><br><%= c.description %></td>
+							<td><b><%= link_to c.name, c.url , {class:c.content_class, target: '_blank'} %></b><br><%= c.description %></td>
 							<% if current_member.is_admin %>
 								<td><%= link_to 'eliminar', {controller: "home", action: "delete_content", content_id: c.id}	, class:"delete_icon" %></td>
 							<% end %>
