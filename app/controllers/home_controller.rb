@@ -7,11 +7,23 @@ class HomeController < ApplicationController
     end
   end
 
-  def index
-  	
+  def about_us
 
-    # flash.now[:notice] = 'Message sent!'
-    # flash.now[:alert] = 'Error while sending message!'
+  end
+
+  def join_us
+    
+  end
+
+  def our_team
+    
+  end
+
+  def contact
+    
+  end
+
+  def index
 
   	@grades = Grade.all
   	@categories = Category.all
@@ -90,7 +102,7 @@ class HomeController < ApplicationController
   end
 
   def material
-    @contents = Content.where(content_type: params[:format])
+    @contents = Content.where(content_type: params[:format]).reverse
   end
 
   def site_categories

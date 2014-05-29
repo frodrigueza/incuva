@@ -30,6 +30,10 @@ Incuba::Application.routes.draw do
 
   get "home/index"
   get "/material" => 'home#material', as: :home_material
+  get "/about_us" => 'home#about_us', as: :home_about_us
+  get "/join_us" => 'home#join_us', as: :home_join_us
+  get "/our_team" => 'home#our_team', as: :home_our_team
+  get "/contact" => 'home#contact', as: :home_contact
 
   root 'home#index'
 
