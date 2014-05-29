@@ -1,7 +1,7 @@
 $(function(){
   $("a.fancybox").fancybox({
-  	'width'			: 800,
-  	'height'			: 640,
-  	openEffect : 'elastic'
+  	'width'			: 2000,
+  	'height'			: 2000,
+  	'openEffect' : 'elastic'
   });
 });
