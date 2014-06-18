@@ -12,11 +12,14 @@
 			<%= notice.body.html_safe %>
 		</div>
 	</td>
+
+	<% if current_member.is_admin %>
 	<td class="span10">
 		<div class="little-img-container delete-icon-div small-padder" id="delete-notice-icon">
 			<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_notice", notice_id: notice.id}, class:"delete_icon" %>
 		</div>
 	</td>
+	<% end 	%> 
 </tr>
 
 

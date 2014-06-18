@@ -3,13 +3,20 @@ Formulario:
 	Funcionamiento:
 		Mail confirmacion del campo e-mail
 
- Dominio:
- 	www.incuva.cl
-
- Contenido:
- 	Agregar previsualizacion para .ppt
-
-
+	Diseño:
+		>Que los usuarios no pueden eliminar noticias!
+		favicon icon
+		achicar el header
+		arreglar noticia
+		links a auspiciadores (me van a mandar las fotos y como quieren que se vea)
+		>"Sign up" por "Registrate"
+		>Marcar los campos obligatorios del registro
+		>"Log out" por "salir"
+		>Agregar "Home" a icono de Home
+		Opcion de descargar las fotos al previsualizarlas
+		Boton X en las previsualizaciones
+		Que chrome pueda guardar contraseña
+		>formulario edicion contenido
 
 
 

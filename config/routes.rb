@@ -9,6 +9,8 @@ Incuba::Application.routes.draw do
 
   resources :categories
 
+  resources :contents
+
   get '/members/sign_in' => 'members#sign_up'
   
   get 'home/sessions' => 'home#sessions'

@@ -4,35 +4,35 @@
 		<table class="full">
 			<tr>
 				<td class="text-right">Nombre:</td>
-				<td><%= f.text_field :name, required:true %></td>
+				<td><%= f.text_field :name, required:true %>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Apellido:</td>
-				<td><%= f.text_field :lastname, required:true %></td>
+				<td><%= f.text_field :lastname, required:true %>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Email:</td>
-				<td><%= f.email_field :email, required:true %></td>
+				<td><%= f.email_field :email, required:true %>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Password:</td>
-				<td><%= f.password_field :password, required:true %></td>
+				<td><%= f.password_field :password, required:true %>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Confirmar password:</td>
-				<td><%= f.password_field :password_confirmation, required:true %></td>
+				<td><%= f.password_field :password_confirmation, required:true %>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Area de interés:</td>
-				<td><%= f.select :interest_area, interest_areas, {required: true}%></td>
+				<td><%= f.select :interest_area, interest_areas, {required: true}%>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Dependencia establecimiento en el que trabaja:</td>
-				<td><%= f.select :school_dependence, school_dependences, {required: true}%></td>
+				<td><%= f.select :school_dependence, school_dependences, {required: true}%>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Región:</td>
-				<td><%= f.select :zone, zones, {required: true}%></td>
+				<td><%= f.select :zone, zones, {required: true}%>(*)</td>
 			</tr>
 			<tr>
 				<td class="text-right">Teléfono:</td>
@@ -40,7 +40,11 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><%= f.submit "Registrarse" %></td>
+				<td><%= f.submit "Listo!" %></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>(*) Campos obligatorios</td>
 			</tr>
 			<tr>
 				<td></td>
