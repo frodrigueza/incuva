@@ -1,80 +1,23 @@
 <% topic = Topic.find(locals[:topic_id])%>
 
 
-	
-<div class="container-1 full">
-	<div class="full section med-img">
-		<h2><%= topic.title %></h2>
-	</div>
+<div class="padder">
+	<div class="full">
+		<div class="full">
+			<h2><%= topic.title %></h2>
+		</div>
 
-	
-	<% if current_member.is_admin %>
-		<% topic.articles.order(:title).each do |a| %>
-			<div class="full article_option" id="article_<%= a.id %>">
-
-				<!-- pointer option -->
-				<div class="image-container">
-					<%= image_tag("bullet_icon.png")%>
-				</div>
-				<!-- article title -->
-				<div class="option resource_option" id="option_<%= a.id %>">
-					<h3><%= a.title + ' (' + a.contents.count.to_s + ')' %></h3>
-				</div>
-
-				<!-- delete option -->
-				<div class="image-container delete-icon-div">
-					<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", article_id: a.id}, remote: true, class: "delete_icon" %>
-				</div>
-			</div>
-			<div class="full div_option" id="div_option_<%= a.id %>">
-				<div class="padder non-floater">
-					<div class="full">
-						<div id="article_description">
-							<%= a.description %>
-						</div>
-					</div>
-					<table class="full table-1" id="article_contents_table_<%= a.id%>">
-						<tr>
-							<th class="icon"></th>
-							<th class="index">Recurso</th>
-							<th class="index">Fuente</th>
-							<th></th>
-							<th></th>
-						</tr>
-					
-						<!-- article contents -->
-						<% a.contents.each do |c| %>
-							<%= render 'content', locals: { content_id: c.id }%>
-						<% end %>
-					</table>
-
-
-					<!-- formulario para subir un nuevo content -->
-					<%= render 'new_content_form', :locals => {:article_id => a.id } %>
-				</div>
-			</div>
-		<% end %>
-
-		<!-- new article form -->
-		<%= render 'new_article_form', locals: { topic_id: topic.id }%>
-
-
-
-
-	<!-- common user view -->
-	<% else %>
-
-		<% topic.articles.each do |a| %>
-			<% if a.contents.count > 0 %>
+		
+		<% if current_member.is_admin %>
+			<% topic.articles.order(:title).each do |a| %>
 				<div class="full article_option" id="article_<%= a.id %>">
-					<!-- pointer option -->
-					<div class="image-container">
-						<%= image_tag("bullet_icon.png")%>
-					</div>
-					<!-- article title -->
-					<div class="option resource_option" id="option_<%= a.id %>">
-						<h3><%= a.title %></h3>
-					</div>
+					<table>
+						<tr>
+							<td><%= image_tag("punto.png")%></td>
+							<td class="option resource_option" id="option_<%= a.id %>"><%= a.title + ' (' + a.contents.count.to_s + ')' %></td>
+							<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", article_id: a.id}, remote: true, class: "delete_icon" %></td>
+						</tr>
+					</table>
 				</div>
 				<div class="full div_option" id="div_option_<%= a.id %>">
 					<div class="padder non-floater">
@@ -83,11 +26,12 @@
 								<%= a.description %>
 							</div>
 						</div>
-						<table class="full table-1">
+						<table class="full table-1" id="article_contents_table_<%= a.id%>">
 							<tr>
 								<th class="icon"></th>
 								<th class="index">Recurso</th>
 								<th class="index">Fuente</th>
+								<th></th>
 								<th></th>
 							</tr>
 						
@@ -96,34 +40,84 @@
 								<%= render 'content', locals: { content_id: c.id }%>
 							<% end %>
 						</table>
-						<!-- formulario para subir un nuevo archivo -->
-						<% if current_member && current_member.is_admin %>
-							<div class="separator">
-							</div>
-							<div class="full">
-								<div class="left">
-									<%= form_tag({action: :upload_content}, multipart: true) do %>
-										<div class="full">
-											<%= text_field_tag 'name', 'titulo del contenido' %>
-										</div>
-										<div class="full">
-											<%= file_field_tag 'content_file' %>
-										</div>
-										<%= hidden_field_tag 'article_id' , a.id %>
-										<div class="full">
-											<%= submit_tag 'Listo'%>
-										</div>
-									<% end %>
-								</div>
-							</div>
-						<% end %>
+
+
+						<!-- formulario para subir un nuevo content -->
+						<%= render 'new_content_form', :locals => {:article_id => a.id } %>
 					</div>
 				</div>
 			<% end %>
+
+			<!-- new article form -->
+			<%= render 'new_article_form', locals: { topic_id: topic.id }%>
+
+
+
+
+		<!-- common user view -->
+		<% else %>
+
+			<% topic.articles.each do |a| %>
+				<% if a.contents.count > 0 %>
+					<div class="full article_option" id="article_<%= a.id %>">
+						<!-- pointer option -->
+						<div class="image-container">
+							<%= image_tag("bullet_icon.png")%>
+						</div>
+						<!-- article title -->
+						<div class="option resource_option" id="option_<%= a.id %>">
+							<h3><%= a.title %></h3>
+						</div>
+					</div>
+					<div class="full div_option" id="div_option_<%= a.id %>">
+						<div class="padder non-floater">
+							<div class="full">
+								<div id="article_description">
+									<%= a.description %>
+								</div>
+							</div>
+							<table class="full table-1">
+								<tr>
+									<th class="icon"></th>
+									<th class="index">Recurso</th>
+									<th class="index">Fuente</th>
+									<th></th>
+								</tr>
+							
+								<!-- article contents -->
+								<% a.contents.each do |c| %>
+									<%= render 'content', locals: { content_id: c.id }%>
+								<% end %>
+							</table>
+							<!-- formulario para subir un nuevo archivo -->
+							<% if current_member && current_member.is_admin %>
+								<div class="separator">
+								</div>
+								<div class="full">
+									<div class="left">
+										<%= form_tag({action: :upload_content}, multipart: true) do %>
+											<div class="full">
+												<%= text_field_tag 'name', 'titulo del contenido' %>
+											</div>
+											<div class="full">
+												<%= file_field_tag 'content_file' %>
+											</div>
+											<%= hidden_field_tag 'article_id' , a.id %>
+											<div class="full">
+												<%= submit_tag 'Listo'%>
+											</div>
+										<% end %>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
 		<% end %>
-	<% end %>
 
 
-	<% if current_member && current_member.is_admin %>
-	<% end %>
+		<% if current_member && current_member.is_admin %>
+		<% end %>
+	</div>
 </div>

@@ -1,7 +1,7 @@
 <% topic = Topic.find(locals[:topic_id])%>
 <div class="full article_option">
 	<div class="image-container left">
-		<%= image_tag("bullet_icon.png")%>
+		<%= image_tag("punto.png")%>
 	</div>
 	<div class="resource_option">
 		<%= form_tag({controller: "home", action: "topic_articles"}, method: "post") do %>

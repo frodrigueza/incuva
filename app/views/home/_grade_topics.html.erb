@@ -1,67 +1,35 @@
 <% g = Grade.find(locals[:grade_id])%>
 <% c = Category.find(locals[:category_id])%>
 <div class="level">
-
-	<% if current_member && current_member.is_admin %>
-	<!-- admin view -->
-		<% g.topics.where(category_id: c.id).each do |t| %>
+	<% g.topics.each do |t| %>
 		<div class="full" id="topic_<%= t.id %>">
-			<div class="full">
-				<div class="little-img-container">
-					<%= image_tag("topic_icon.png")%>
-				</div>
-				<div class="left nav-level left-menu-option" id="level_3_<%= t.id %>">
-					<%= link_to t.title + ' (' + t.contents.count.to_s + ')', controller: "home", action: "resource", topic_id: t.id, remote: true%>
-				</div>
-				<% if current_member && current_member.is_admin %>
-					<div class="little-img-container delete-icon-div">
-						<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", topic_id: t.id}, remote: true, class: "delete_icon" %>
-					</div>
-				<% end %>
-			</div>
-		</div>
-		<% end %>
-
-
-		<!-- form new topic -->
-		<% if current_member && current_member.is_admin %>
-			<div class="full">
-				<div class="little-img-container">
-					<%= image_tag("topic_icon.png")%>
-				</div>
-				<div class="left nav-level">
-					<%= form_tag({controller: "home", action: "grade_topics"}, method: "post") do %>
-						<%= text_field_tag 'title','Crear nuevo tema', required: true%>
-						<%= hidden_field_tag('grade_id', g.id)%>
-						<%= hidden_field_tag('category_id', c.id)%>
-						<%= submit_tag("Crear")%>
+			<table>
+				<tr>
+					<td>
+						<%= image_tag("punto.png")%>
+					</td>
+					<td class="left-menu-option" id="level_3_<%= t.id %>">
+						<%= link_to t.title.to_s + ' (' + t.contents.count.to_s + ')', controller: "home", action: "resource", topic_id: t.id, remote: true%>
+					</td>
+					<% if current_member && current_member.is_admin %>
+						<td class="little-img-container delete-icon-div">
+							<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", topic_id: t.id}, remote: true, class: "delete_icon" %>
+						</td>
 					<% end %>
-				</div>
-			</div>
-		<% end %>
-
-	<% else %>
-	<!-- simple member or invited view -->
-		<% g.topics.where(category_id: c.id).each do |t| %>
-			<% if t.contents.count > 0 %>
-				<div class="full" id="topic_<%= t.id %>">
-					<div class="full">
-						<div class="little-img-container">
-							<%= image_tag("topic_icon.png")%>
-						</div>
-						<div class="left nav-level left-menu-option" id="level_3_<%= t.id %>">
-							<%= link_to t.title, controller: "home", action: "resource", topic_id: t.id, remote: true%>
-						</div>
-						<% if current_member && current_member.is_admin %>
-							<div class="little-img-container">
-								<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", topic_id: t.id, remote: true %>
-							</div>
-						<% end %>
-					</div>
-				</div>
-			<% end %>
-		<% end %>
+				</tr>
+			</table>
+		</div>
 	<% end %>
 
 
+	<!-- form new topic -->
+	<% if current_member && current_member.is_admin %>
+			<table>
+				<tr>
+					<td><%= image_tag("punto.png")%></td>
+					<td><%= link_to 'Nuevo tema', new_topic_path(g.id) %></td>
+					<td></td>
+				</tr>
+			</table>
+	<% end %>
 </div>

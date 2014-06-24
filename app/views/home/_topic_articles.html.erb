@@ -1,18 +1,31 @@
 <% t = Topic.find(locals[:topic_id]) %>
 <div class="level">
-	<% t.articles.each do |a| %>
-	<div class="full" id="#article_<%= a.id %>">
-		<div class="little-img-container">
-			<%= image_tag("article_icon.png")%>
-		</div>
-		<div class="left">
-			<%= link_to a.title, controller: "home", action: "resource", article_id: a.id, remote: true %>
-		</div>
-		<div class="little-img-container">
-			<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", article_id: a.id, remote: true %>
-		</div>
-	</div>
-	<% end %>
+	<table>
+		<% t.articles.each do |a| %>
+
+			<tr>
+				<td><%= image_tag("article_icon.png")%></td>
+				<td><%= link_to a.title, controller: "home", action: "resource", article_id: a.id, remote: true %></td>
+				<td><%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", article_id: a.id, remote: true %></td>
+			</tr>
+			<tr>
+				<div class="full" id="#article_<%= a.id %>">
+					<div class="">
+						<%= image_tag("article_icon.png")%>
+					</div>
+					<div class="left">
+						<%= link_to a.title, controller: "home", action: "resource", article_id: a.id, remote: true %>
+					</div>
+					<div class="">
+						<%= link_to image_tag("delete_icon.png"), controller: "home", action: "delete_item", article_id: a.id, remote: true %>
+					</div>
+				</div>
+			</tr>
+		<% end %>
+	</table>
+
+
+
 	<div class="full">
 		<%= form_tag({controller: "home", action: "topic_articles"}, method: "post") do %>
 			<%= text_field_tag('title','Crear nuevo articulo')%>

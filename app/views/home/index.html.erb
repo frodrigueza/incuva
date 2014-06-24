@@ -1,1 +1,16 @@
-<%= render 'layouts/info' %>
+<div class="full">
+	<div class="full">
+		<h3>Escoge una asignatura!</h3>
+	</div>
+	<div class="full">
+		<table class="full">
+			<% Notice.all.order(:created_at).reverse.take(5).each do |n| %>
+				<%= render 'layouts/notice' , locals: { notice_id: n.id }%>
+			<% end %>
+		</table>
+	</div>
+
+	<% if current_member.is_admin %>
+		<%= render 'layouts/new_notice_form' %>
+	<% end %>
+</div>

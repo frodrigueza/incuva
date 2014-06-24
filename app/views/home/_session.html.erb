@@ -1,0 +1,15 @@
+<div class="full" id="session">
+	<div id="session_table_div">
+		<table id="session_table">
+			<tr>
+				<td><%= current_member.f_name %></td>
+			</tr>
+			<tr>
+				<td><%= current_member.email %></td>
+			</tr>
+			<tr>
+				<td><b><%= link_to "Cerrar sesion", destroy_member_session_path, :method => :delete  %></b></td>
+			</tr>
+		</table>
+	</div>
+</div>

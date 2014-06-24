@@ -2,15 +2,20 @@
 <div class="level">
 	
 	<% if current_member && current_member.is_admin %>
-	<!-- admin view -->
+		
+		<!-- admin view -->
 		<% c.grades.each do |g| %>
 			<div class="full">
-				<div class="little-img-container">
-					<%= image_tag("grade_icon.png")%>
-				</div>
-				<div class="nav-level left" id="level_2_<%= g.id %>">
-					<%= g.f_level + ' (' + g.contents.count.to_s + ')'%>
-				</div>
+				<table>
+					<tr>
+						<td>
+							<%= image_tag("punto.png")%>
+						</td>
+					<td class="nav-level" id="level_2_<%= g.id %>">
+						<%= g.f_level + ' (' + g.contents.count.to_s + ')'%>
+					</td>
+					</tr>
+				</table>
 			</div>
 
 
@@ -30,7 +35,7 @@
 			<% if g.contents.count > 0 %>
 				<div class="full">
 					<div class="little-img-container">
-						<%= image_tag("grade_icon.png")%>
+						<%= image_tag("punto.png")%>
 					</div>
 					<div class="nav-level left" id="level_2_<%= g.id %>">
 						<%= g.f_level %>

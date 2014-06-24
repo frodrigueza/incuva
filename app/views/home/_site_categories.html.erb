@@ -2,24 +2,18 @@
 <!-- es admin, mostramos todo -->
 	<% Category.all.each do |c| %>
 		<div class="full" id="category_<%= c.id%>">
-			<div class="nav-level-1">
-				<div class="little-img-container">
-					<%= image_tag("category_icon.png")%>
-				</div>
-				<div class="left  nav-level" id="level_1_<%= c.id %>">
-					<%= c.name + ' (' + c.contents.count.to_s + ')'%>
-				</div>
-				<% if current_member && current_member.is_admin %>
-				<div class="little-img-container delete-icon-div">
-					<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %>
-				</div>
-				<% end %>
-			</div>
+			<table>
+				<tr class="nav-level-1">
+					<td><%= image_tag("punto.png")%></td>
+					<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.contents.count.to_s + ')'%></td>
+					<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %></td>
+				</tr>
+			</table>
+		</div>
 
-			<!-- categories_grades -->
-			<div class="full  nav-level-2 div_level_2_<%= c.id %> div_nav_level">
-				<%= render 'category_grades', :locals => {:category_id => c.id }%>
-			</div>
+		<!-- categories_grades -->
+		<div class="full  nav-level-2 div_level_2_<%= c.id %> div_nav_level">
+			<%= render 'category_grades', :locals => {:category_id => c.id }%>
 		</div>
 
 	<% end %>
@@ -31,19 +25,12 @@
 		<!-- si es que la cateogoria tiene contenidos, la mostramos -->
 		<% if c.contents.count > 0 %>
 			<div class="full" id="category_<%= c.id%>">
-				<div class="nav-level-1">
-					<div class="little-img-container">
-						<%= image_tag("category_icon.png")%>
-					</div>
-					<div class="left  nav-level" id="level_1_<%= c.id %>">
-						<%= c.name + ' (' + c.contents.count.to_s + ')'%>
-					</div>
-					<% if current_member && current_member.is_admin %>
-					<div class="little-img-container">
-						<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %>
-					</div>
-					<% end %>
-				</div>
+				<table>
+					<tr class="nav-level-1">
+						<td><%= image_tag("punto.png")%></td>
+						<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.contents.count.to_s + ')'%></td>
+					</tr>
+				</table>
 
 				<!-- categories_grades -->
 				<div class="full  nav-level-2 div_level_2_<%= c.id %> div_nav_level">
@@ -61,7 +48,7 @@
 	<div class="full">
 		<div class="nav-level-1">
 			<div class="little-img-container left">
-				<%= image_tag("category_icon.png")%>
+				<%= image_tag("punto.png")%>
 			</div>
 
 				<!-- category new form -->

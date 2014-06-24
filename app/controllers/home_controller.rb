@@ -24,7 +24,6 @@ class HomeController < ApplicationController
   end
 
   def index
-
   	@grades = Grade.all
   	@categories = Category.all
   	@content = Content.new
