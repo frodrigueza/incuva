@@ -1,0 +1,16 @@
+<h3>Listando usuarios</h3>
+
+<table>
+	<tr>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>E-mail</th>
+	</tr>
+	<% @members.each do |m| %>
+		<tr>
+			<td><%= m.name %></td>
+			<td><%= m.lastname %></td>
+			<td><%= m.email %></td>
+		</tr>
+	<% end %>
+</table>

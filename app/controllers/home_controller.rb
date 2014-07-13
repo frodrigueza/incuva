@@ -1,9 +1,17 @@
 class HomeController < ApplicationController
   before_action :require_login
+  before_action :is_admin, only: [:members]
+  layout false, only: [:welcome]
 
   def require_login
     if !current_member
       redirect_to members_sign_in_path
+    end
+  end
+
+  def is_admin
+    if !current_member.is_admin
+      redirect_to root_path
     end
   end
 
@@ -21,6 +29,9 @@ class HomeController < ApplicationController
 
   def contact
     
+  end
+
+  def welcome
   end
 
   def index
@@ -98,6 +109,10 @@ class HomeController < ApplicationController
   	respond_to do |format|
 	    format.js
 	  end
+  end
+
+  def members
+    @members = Member.all
   end
 
   def material

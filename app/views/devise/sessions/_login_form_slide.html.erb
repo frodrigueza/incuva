@@ -1,21 +1,17 @@
-<div class="full">
-
-    <!-- title -->
-    <div id="registration-full-div">
-        <div class="padder">
-            <!-- <h1 id="website-title">Incuva</h1> -->
-            <div class="full">
-                    <div class="span40 centered">
-                            <%= image_tag('logo-Incuva-horizontal.png')%>
-                    </div>
+<div class="full" id="login">
+    <div class="padder">
+        <div class="full">
+            <div class="centered">
+                <%= image_tag 'logotipo_2.png' %>
             </div>
+        </div>
 
-            <div class="full">
-                <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div class="full">
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
                 <table style=" margin-left: auto; margin-right: auto; ">
                     <tr>
                         <td></td>
-                        <td><h4>Ingresar</h4></td>
+                        <td><b>Ingresar<b></td>
                     </tr>
                     <tr>
                         <td class="text-right">Email:</td>
@@ -38,11 +34,11 @@
                         <td><%= render "devise/shared/links" %></td>
                     </tr>
                 </table>
-                    <div class="full">
-                            <%= devise_error_messages! %>
-                    </div>
-                <% end %>
-            </div>
+
+                <div class="full">
+                        <%= devise_error_messages! %>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>

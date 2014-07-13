@@ -29,7 +29,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to root_path }
         format.json { render action: 'show', status: :created, location: @content }
       else
         format.html { render action: 'new' }

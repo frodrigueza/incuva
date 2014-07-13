@@ -1,3 +1,3 @@
 <% aux = 'iconos/menu_bar_2/' + index + '.png' %>
 <td><%= image_tag (aux)%></td>
-<td class="link_to"><%= index.gsub('_',' ') %></td>
+<td class="link_to"><%= link_to index.gsub('_',' '), home_material_path(content_name_type(index)) %></td>

@@ -36,6 +36,8 @@ Incuba::Application.routes.draw do
   get "/join_us" => 'home#join_us', as: :home_join_us
   get "/our_team" => 'home#our_team', as: :home_our_team
   get "/contact" => 'home#contact', as: :home_contact
+  get "/members" => 'home#members', as: :home_members
+  get "/welcome" => 'home#welcome', as: :home_welcome
 
   root 'home#index'
 

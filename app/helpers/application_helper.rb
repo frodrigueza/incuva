@@ -63,22 +63,43 @@ module ApplicationHelper
 
 	def content_type_name(i)
 		case i.to_i
-		when 1
-			return 'Videos'
-		when 2
-			return 'Infografías'
-		when 3
-			return 'Cartas al director'
-		when 4
-			return 'Columnas'
-		when 5
-			return 'Estudios'
-		when 6
-			return 'Noticias'
-		when 7
-			return 'Spots'
-		when 8
-			return 'Presentaciones'
+			when 1
+				return 'Videos'
+			when 2
+				return 'Infografías'
+			when 3
+				return 'Cartas al director'
+			when 4
+				return 'Columnas'
+			when 5
+				return 'Estudios'
+			when 6
+				return 'Noticias'
+			when 7
+				return 'Spots'
+			when 8
+				return 'Presentaciones'
+		end
+	end
+
+	def content_name_type(name)
+		case name.to_s
+			when 'videos'
+				return 1
+			when 'infografias'
+				return 2
+			when 'cartas_al_director'
+				return 3
+			when 'columnas'
+				return 4
+			when 'estudios'
+				return 5
+			when 'noticias'
+				return 6
+			when 'spots'
+				return 7
+			when 'presentaciones'
+				return 8
 		end
 		
 	end
