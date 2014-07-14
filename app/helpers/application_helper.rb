@@ -84,21 +84,21 @@ module ApplicationHelper
 
 	def content_name_type(name)
 		case name.to_s
-			when 'videos'
+			when 'Videos'
 				return 1
-			when 'infografias'
+			when 'Infografias'
 				return 2
-			when 'cartas_al_director'
+			when 'Cartas_al_director'
 				return 3
-			when 'columnas'
+			when 'Columnas'
 				return 4
-			when 'estudios'
+			when 'Estudios'
 				return 5
-			when 'noticias'
+			when 'Noticias'
 				return 6
-			when 'spots'
+			when 'Spots'
 				return 7
-			when 'presentaciones'
+			when 'Presentaciones'
 				return 8
 		end
 		

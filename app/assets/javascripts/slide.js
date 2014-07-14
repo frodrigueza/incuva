@@ -23,7 +23,7 @@ $(function(){
 			}
 			$('.slide').hide();
 			$("#"+slide_ids[aux]).fadeIn(2000);
-		}, 5000)
+		}, 7000)
 	}
 
 });

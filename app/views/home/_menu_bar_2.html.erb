@@ -1,15 +1,16 @@
 <div class="full" id="menu_bar_2">
 	<table>
 		<tr>
-			<%= render 'menu_bar_2_item', index:'inicio' %>
-			<%= render 'menu_bar_2_item', index:'videos' %>
-			<%= render 'menu_bar_2_item', index:'infografias' %>
-			<%= render 'menu_bar_2_item', index:'cartas_al_director' %>
-			<%= render 'menu_bar_2_item', index:'columnas' %>
-			<%= render 'menu_bar_2_item', index:'estudios' %>
-			<%= render 'menu_bar_2_item', index:'noticias' %>
-			<%= render 'menu_bar_2_item', index:'spots' %>
-			<%= render 'menu_bar_2_item', index:'presentaciones' %>
+			<td><%= image_tag 'iconos/menu_bar_2/inicio.png' %></td>
+			<td class="link_to"><%= link_to 'Inicio', root_path %></td>
+			<%= render 'menu_bar_2_item', index:'Videos' %>
+			<%= render 'menu_bar_2_item', index:'Infografias' %>
+			<%= render 'menu_bar_2_item', index:'Cartas_al_director' %>
+			<%= render 'menu_bar_2_item', index:'Columnas' %>
+			<%= render 'menu_bar_2_item', index:'Estudios' %>
+			<%= render 'menu_bar_2_item', index:'Noticias' %>
+			<%= render 'menu_bar_2_item', index:'Spots' %>
+			<%= render 'menu_bar_2_item', index:'Presentaciones' %>
 		</tr>
 	</table>
 </div>
