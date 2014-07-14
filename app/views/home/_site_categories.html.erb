@@ -3,26 +3,26 @@
 </div>
 
 <!-- es admin, mostramos todo -->
-<% Category.all.each do |c| %>
-	<div class="full" id="category_<%= c.id%>">
-		<table>
-			<tr class="nav-level-1">
-				<td><%= image_tag("iconos/site_categories/asignatura.png")%></td>
-				<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.contents.count.to_s + ')'%></td>
-				<% if current_member && current_member.is_admin %>
-					<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %></td>
-				<% end %>
-			</tr>
-		</table>
-	</div>
-
-	<!-- categories_grades -->
-	<div class="full  nav-level-2 div_level_2_<%= c.id %> div_nav_level">
-		<%= render 'category_grades', :locals => {:category_id => c.id }%>
-	</div>
-
-<% end %>
 <% if current_member && current_member.is_admin %>
+	<% Category.all.each do |c| %>
+		<div class="full" id="category_<%= c.id%>">
+			<table>
+				<tr class="nav-level-1">
+					<td><%= image_tag("iconos/site_categories/asignatura.png")%></td>
+					<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.contents.count.to_s + ')'%></td>
+					<% if current_member && current_member.is_admin %>
+						<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %></td>
+					<% end %>
+				</tr>
+			</table>
+		</div>
+
+		<!-- categories_grades -->
+		<div class="full  nav-level-2 div_level_2_<%= c.id %> div_nav_level">
+			<%= render 'category_grades', :locals => {:category_id => c.id }%>
+		</div>
+
+	<% end %>
 	<div class="full">
 		<div class="nav-level-1">
 			<div class="little-img-container left">
@@ -38,5 +38,28 @@
 				</div>
 		</div>
 	</div>
+
+<% else %>
+	<% Category.all.each do |c| %>
+		<% if c.contents.count > 0 %>
+			<div class="full" id="category_<%= c.id%>">
+				<table>
+					<tr class="nav-level-1">
+						<td><%= image_tag("iconos/site_categories/asignatura.png")%></td>
+						<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.contents.count.to_s + ')'%></td>
+						<% if current_member && current_member.is_admin %>
+							<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %></td>
+						<% end %>
+					</tr>
+				</table>
+			</div>
+
+			<!-- categories_grades -->
+			<div class="full  nav-level-2 div_level_2_<%= c.id %> div_nav_level">
+				<%= render 'category_grades', :locals => {:category_id => c.id }%>
+			</div>
+
+		<% end %>
+	<% end %>
 <% end %>
 
