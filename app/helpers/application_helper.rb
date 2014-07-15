@@ -41,8 +41,8 @@ module ApplicationHelper
 	end
 	def school_dependences
 		array = [
-			'Particular pagado',
 			'Particular subvencionado',
+			'Particular pagado',
 			'Municipalizado'
 		]
 	end

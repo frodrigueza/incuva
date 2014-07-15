@@ -1,0 +1,39 @@
+<div class="full">
+	<%= form_tag({action: :update_member}) do %>
+	  
+		<table class="full">
+			<tr>
+				<td>Nombre:</td>
+				<td><%= current_member.name %></td>
+			</tr>
+			<tr>
+				<td>Apellido:</td>
+				<td><%= current_member.lastname %></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><%= current_member.email %></td>
+			</tr>
+			<tr>
+				<td>Area de interés:</td>
+				<td><%= select_tag :interest_area, options_for_select(interest_areas), prompt: current_member.interest_area %></td>
+			</tr>
+			<tr>
+				<td>Dependencia establecimiento<br> en el que trabaja:</td>
+				<td><%= select_tag :school_dependence, options_for_select(school_dependences), prompt: current_member.school_dependence %></td>
+			</tr>
+			<tr>
+				<td>Región:</td>
+				<td><%= select_tag :zone, options_for_select(zones), prompt: current_member.zone %></td>
+			</tr>
+			<tr>
+				<td>Teléfono:</td>
+				<td><%= text_field_tag :phone, current_member.phone %></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><%= submit_tag "Listo!" %></td>
+			</tr>
+		</table>
+	<% end %>
+</div>

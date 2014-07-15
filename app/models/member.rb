@@ -10,6 +10,14 @@ class Member < ActiveRecord::Base
 	  end
   end
 
+  def update_fields(params)
+  	params[:school_dependence] != '' ? self.school_dependence = params[:school_dependence] : true
+  	params[:interest_area] != '' ? self.interest_area = params[:interest_area] : true
+  	params[:zone] != '' ? self.zone = params[:zone] : true
+  	params[:phone] != '' ? self.phone = params[:phone] : true
+  	self.save
+  end
+
   comma do 
 
   	name

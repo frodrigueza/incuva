@@ -30,6 +30,16 @@ class HomeController < ApplicationController
     
   end
 
+  def update_member_form
+    
+  end
+
+  def update_member
+    member = current_member
+    member.update_fields(params)
+
+    redirect_to request.referer
+  end
 
   def index
   	@grades = Grade.all
