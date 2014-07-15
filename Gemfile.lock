@@ -49,7 +49,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
-    csv_shaper (1.0.0)
+    comma (3.2.1)
       activesupport (>= 3.0.0)
     daemons (1.1.9)
     debug_inspector (0.0.2)
@@ -189,7 +189,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
-  csv_shaper
+  comma (~> 3.0)
   debugger
   devise
   fancybox-rails

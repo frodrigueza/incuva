@@ -68,7 +68,7 @@ group :development do
 end
 
 # csv
-gem 'csv_shaper'
+gem "comma", "~> 3.0"
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   before_action :require_login
   before_action :is_admin, only: [:members]
-  layout false, only: [:welcome]
 
   def require_login
     if !current_member
@@ -31,8 +30,6 @@ class HomeController < ApplicationController
     
   end
 
-  def welcome
-  end
 
   def index
   	@grades = Grade.all
@@ -113,10 +110,10 @@ class HomeController < ApplicationController
 
   def members
     @members = Member.all
-    
+
     respond_to do |format|
       format.html
-      format.csv { render text: @members.to_csv }
+      format.csv { render :csv => @members }
     end
   end
 

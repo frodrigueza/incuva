@@ -10,13 +10,15 @@ class Member < ActiveRecord::Base
 	  end
   end
 
-  def self.to_csv
-	csv_string = CsvShaper.encode do |csv|
-	  csv.headers :name, :age, :gender, :pet_names
+  comma do 
 
-	  csv.rows @members do |csv, member|
-	    csv.cells :name, :lastname, :email
-	  end
-	end
+  	name
+  	lastname
+  	email
+  	zone
+  	school_dependence
+  	interest_area
+  	phone
+  	
   end
 end
