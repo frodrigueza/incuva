@@ -1,22 +1,40 @@
 <% c = Category.find(locals[:category_id]) %>
 <div class="level">
 
-	<!-- simple member-invited view -->
-	<% c.grades.each do |g| %>
-		<% if g.contents.count > 0 %>
-		<table>
-			<tr class="nav-level left" id="level_2_<%= g.id %>">
-				<td><%= image_tag("iconos/site_categories/curso.png")%></td>
-				<td><%= g.f_level + ' (' + g.contents.count.to_s + ')'%></td>
-			</tr>
-		</table>
-
-
-
+	<% if current_member.is_admin %>
+		<% c.grades.each do |g| %>
+			<table>
+				<tr class="nav-level left" id="level_2_<%= g.id %>">
+					<td><%= image_tag("iconos/site_categories/curso.png")%></td>
+					<td><%= g.f_level + ' (' + g.contents.count.to_s + ')'%></td>
+				</tr>
+			</table>
+			
 			<!-- grade_topics -->
 			<div class="full nav-level-2 div_level_3_<%= g.id %> div_nav_level">
 				<%= render 'grade_topics', :locals => { :grade_id => g.id, :category_id => c.id } %>
 			</div>
+		<% end %>
+
+	<% else %>
+
+		<!-- simple member-invited view -->
+		<% c.grades.each do |g| %>
+			<% if g.contents.count > 0 %>
+			<table>
+				<tr class="nav-level left" id="level_2_<%= g.id %>">
+					<td><%= image_tag("iconos/site_categories/curso.png")%></td>
+					<td><%= g.f_level + ' (' + g.contents.count.to_s + ')'%></td>
+				</tr>
+			</table>
+
+
+
+				<!-- grade_topics -->
+				<div class="full nav-level-2 div_level_3_<%= g.id %> div_nav_level">
+					<%= render 'grade_topics', :locals => { :grade_id => g.id, :category_id => c.id } %>
+				</div>
+			<% end %>
 		<% end %>
 	<% end %>
 </div>

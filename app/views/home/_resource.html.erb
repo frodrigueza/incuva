@@ -15,9 +15,13 @@
 							<td><%= image_tag("punto.png")%></td>
 							<td class="option resource_option" id="option_<%= a.id %>"><%= a.title + ' (' + a.contents.count.to_s + ')' %></td>
 							<% if current_member.is_admin %>
-								<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", article_id: a.id}, remote: true, class: "delete_icon" %>
-							<% end %>
+							<td>
+								<%= link_to 'Eliminar', 	{controller: "home", action: "delete_item", article_id: a.id}, remote: true, class: "delete_icon" %>
 							</td>
+							<td>
+								<%= link_to 'Editar', edit_article_path(a) %>
+							</td>
+							<% end %>
 						</tr>
 					</table>
 				</div>
@@ -51,10 +55,11 @@
 					</div>
 				</div>
 			<% end %>
-
-			<% if current_member.is_admin %>
-				<!-- new article form -->
-				<%= render 'new_article_form', locals: { topic_id: topic.id }%>
-			<% end %>
+			<table>
+				<tr>
+					<td><%= image_tag("punto.png")%></td>
+					<td><%= link_to 'Nuevo articulo', new_article_path(topic.id) %></td>
+				</tr>
+			</table>
 	</div>
 </div>

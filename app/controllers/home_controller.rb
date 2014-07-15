@@ -113,6 +113,11 @@ class HomeController < ApplicationController
 
   def members
     @members = Member.all
+    
+    respond_to do |format|
+      format.html
+      format.csv { render text: @members.to_csv }
+    end
   end
 
   def material
@@ -134,7 +139,7 @@ class HomeController < ApplicationController
 
   def delete_item
   	if params[:category_id]
-  		# Category.find(params[:category_id]).destroy
+  		Category.find(params[:category_id]).destroy
   		@category_id = params[:category_id]
   	elsif params[:topic_id]
   		Topic.find(params[:topic_id]).destroy

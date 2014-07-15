@@ -11,13 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
 
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.hidden_field :topic_id, value: @topic.id %>
+  <table>
+    <tr>
+      <td>Titulo</td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td>Descripcion</td>
+      <td><%= f.text_field :description %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit 'Listo' %></td>
+    </tr>
+  </table>
 <% end %>

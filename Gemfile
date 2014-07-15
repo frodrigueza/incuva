@@ -67,6 +67,9 @@ group :development do
   gem 'thin'
 end
 
+# csv
+gem 'csv_shaper'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
