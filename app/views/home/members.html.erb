@@ -5,12 +5,18 @@
 		<th>Nombre</th>
 		<th>Apellido</th>
 		<th>E-mail</th>
+		<th>Zona</th>
+		<th>Area de interes</th>
+		<th>Dependencia del establecimiento</th>
 	</tr>
 	<% @members.each do |m| %>
 		<tr>
 			<td><%= m.name %></td>
 			<td><%= m.lastname %></td>
 			<td><%= m.email %></td>
+			<td><%= m.zone %></td>
+			<td><%= m.interest_area %></td>
+			<td><%= m.school_dependence %></td>
 		</tr>
 	<% end %>
 </table>
