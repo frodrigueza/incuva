@@ -65,10 +65,13 @@ group :development do
   gem 'debugger'
   gem 'binding_of_caller'
   gem 'thin'
+  gem 'hirb'
 end
 
 # csv
 gem "comma", "~> 3.0"
+
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

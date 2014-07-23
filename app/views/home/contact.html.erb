@@ -1,0 +1,14 @@
+<%= form_tag({action: :contact_admin}) do %>
+	<table>
+		<tr>
+			<td><%= text_field_tag 'asunto','Asunto', required: true %></td>
+		</tr>
+		<tr>
+			<td><%= text_field_tag 'asunto','Mensaje', required: true %></td>
+		</tr>
+		<tr>
+			<td><%= submit_tag 'Enviar' %></td>
+		</tr>
+	</table>
+
+<% end %>

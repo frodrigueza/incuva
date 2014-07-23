@@ -55,7 +55,7 @@ module ApplicationHelper
 			'Columnas',
 			'Estudios',
 			'Noticias',
-			'Spots',
+			'Publicidad',
 			'Presentaciones'
 		]
 		
@@ -76,7 +76,7 @@ module ApplicationHelper
 			when 6
 				return 'Noticias'
 			when 7
-				return 'Spots'
+				return 'Publicidad'
 			when 8
 				return 'Presentaciones'
 		end
@@ -96,7 +96,7 @@ module ApplicationHelper
 				return 5
 			when 'Noticias'
 				return 6
-			when 'Spots'
+			when 'Publicidad'
 				return 7
 			when 'Presentaciones'
 				return 8

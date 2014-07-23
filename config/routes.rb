@@ -39,6 +39,7 @@ Incuba::Application.routes.draw do
   get "/members" => 'home#members', as: :home_members
   get "/update_member_form" => 'home#update_member_form', as: :update_member_form
   post "/update_member" => 'home#update_member', as: :update_member
+  post "/contact_admin" => 'home#contact_admin', as: :contact_admin
 
   root 'home#index'
 
