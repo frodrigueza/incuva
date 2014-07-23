@@ -31,7 +31,7 @@ class HomeController < ApplicationController
   end
 
   def contact_admin
-    ContactAdminMailer.contact_admin.deliver
+    HomeMailer.contact_admin.deliver
     redirect_to request.referer
   end
 
