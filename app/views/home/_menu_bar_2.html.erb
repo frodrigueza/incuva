@@ -4,7 +4,8 @@
 			<td><%= image_tag 'iconos/menu_bar_2/inicio.png' %></td>
 			<td class="link_to"><%= link_to 'Inicio', root_path %></td>
 			<%= render 'menu_bar_2_item', index:'Videos' %>
-			<%= render 'menu_bar_2_item', index:'Publicidad' %>
+			<td><%= image_tag 'iconos/menu_bar_2/publi.png' %></td>
+			<td class="link_to"><%= link_to 'Publicidad', home_material_path(7) %></td>
 			<%= render 'menu_bar_2_item', index:'Infografias' %>
 			<%= render 'menu_bar_2_item', index:'Cartas_al_director' %>
 			<%= render 'menu_bar_2_item', index:'Columnas' %>
