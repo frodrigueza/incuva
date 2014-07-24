@@ -198,6 +198,7 @@ DEPENDENCIES
   hirb
   jbuilder (~> 1.2)
   jquery-rails
+  mail
   paperclip
   pg
   quiet_assets

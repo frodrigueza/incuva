@@ -7,7 +7,7 @@ class HomeMailer < ActionMailer::Base
     mail(to: 'feliperodriguezarteaga@gmail.com', subject: 'Welcome to My Awesome Site')
   end
 
-  def contact_admin
+  def contact_admin(number)
   	mail(to: 'feliperodriguezarteaga@gmail.com', subject: 'Welcome to My Awesome Site')
   end
 

@@ -71,6 +71,8 @@ end
 # csv
 gem "comma", "~> 3.0"
 
+# mailers
+gem 'mail'
 
 
 # Use ActiveModel has_secure_password

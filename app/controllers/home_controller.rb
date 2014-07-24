@@ -31,7 +31,17 @@ class HomeController < ApplicationController
   end
 
   def contact_admin
-    HomeMailer.contact_admin.deliver
+
+    mail = Mail.new do
+      from    'mikel@test.lindsaar.net'
+      to      'feliperodriguezarteaga@gmail.com'
+      subject 'This is a test email'
+      body    'hola'
+    end
+
+    mail.delivery_method :sendmail
+
+    # HomeMailer.contact_admin(1).deliver
     redirect_to request.referer
   end
 
