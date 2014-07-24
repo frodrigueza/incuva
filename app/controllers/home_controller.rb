@@ -34,7 +34,7 @@ class HomeController < ApplicationController
 
     mail = Mail.new do
       from    'mikel@test.lindsaar.net'
-      to      'feliperodriguezarteaga@gmail.com'
+      to      'hualoclothing@gmail.com'
       subject 'This is a test email'
       body    'hola'
     end
