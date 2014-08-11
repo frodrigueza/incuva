@@ -1,8 +1,11 @@
 class Member < ActiveRecord::Base
+  has_many :downloads
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
 
   def f_name
   	if self.name && self.lastname
@@ -16,6 +19,19 @@ class Member < ActiveRecord::Base
   	params[:zone] != '' ? self.zone = params[:zone] : true
   	params[:phone] != '' ? self.phone = params[:phone] : true
   	self.save
+  end
+
+  def new_download(content_id)
+    content = Content.find(content_id)
+    if self.downloads.where(content_id: content_id).count == 0
+      d = Download.create()
+      self.downloads << d
+      content.downloads << d
+    else
+      d = self.downloads.where(content_id: content_id).first
+      d.download_times += 1
+      d.save
+    end
   end
 
   comma do 

@@ -1,22 +1,22 @@
 class Content < ActiveRecord::Base
 	belongs_to :article
+	has_many :downloads
 
 	def image
-
 		if self.extension == 'pdf'
-			return "file.png"
+			return "contents/file.png"
 		elsif self.extension == 'mp3'
-			return "music_icon.png"
+			return "contents/music_icon.png"
 		elsif self.extension == 'mp4'
-			return "video.png"
+			return "contents/video.png"
 		elsif self.extension == 'jpg'
-			return "image.png"
+			return "contents/image.png"
 		elsif self.extension == 'rar'
-			return "compressed.png"
+			return "contents/compressed.png"
 		elsif self.extension == 'ppt'
-			return "presentacion.png"
+			return "contents/presentacion.png"
 		else
-			return "file.png"
+			return "contents/file.png"
 		end
 		
 	end

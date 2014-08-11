@@ -10,6 +10,7 @@ class ContentsController < ApplicationController
   # GET /contents/1
   # GET /contents/1.json
   def show
+    current_member.new_download(params[:id])
   end
 
   # GET /contents/new
@@ -57,7 +58,7 @@ class ContentsController < ApplicationController
   def destroy
     @content.destroy
     respond_to do |format|
-      format.html { redirect_to contents_url }
+      format.html { redirect_to root_path }
       format.json { head :no_content }
     end
   end

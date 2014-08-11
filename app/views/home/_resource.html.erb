@@ -9,57 +9,53 @@
 
 		
 			<% topic.articles.order(:title).each do |a| %>
-				<div class="full article_option" id="article_<%= a.id %>">
-					<table>
-						<tr>
-							<td><%= image_tag("punto.png")%></td>
-							<td class="option resource_option" id="option_<%= a.id %>"><%= a.title + ' (' + a.contents.count.to_s + ')' %></td>
-							<% if current_member.is_admin %>
-							<td>
-								<%= link_to 'Eliminar', 	{controller: "home", action: "delete_item", article_id: a.id}, remote: true, class: "delete_icon" %>
-							</td>
-							<td>
-								<%= link_to 'Editar', edit_article_path(a) %>
-							</td>
-							<% end %>
-						</tr>
-					</table>
-				</div>
-				<div class="full div_option" id="div_option_<%= a.id %>">
-					<div class="padder non-floater">
-						<div class="full">
-							<div id="article_description">
-								<%= a.description %>
-							</div>
-						</div>
-						<table class="full table-1" id="article_contents_table_<%= a.id%>">
+				<% if a.contents.count > 0 || current_member.is_admin %>
+					<div class="full article_option" id="article_<%= a.id %>">
+						<table>
 							<tr>
-								<th></th>
-								<th>Recurso</th>
-								<th>Fuente</th>
-								<th></th>
-								<th></th>
+								<td style="vertical-align: top">&bull;</td>
+								<td class="option resource_option" id="option_<%= a.id %>"><%= a.title + ' (' + a.contents.count.to_s + ')' %></td>
+								<% if current_member.is_admin %>
+								<td>
+									<%= link_to 'Eliminar', 	{controller: "home", action: "delete_item", article_id: a.id}, remote: true, class: "delete_icon" %>
+								</td>
+								<td>
+									<%= link_to 'Editar', edit_article_path(a) %>
+								</td>
+								<% end %>
 							</tr>
-						
-							<!-- article contents -->
-							<% a.contents.each do |c| %>
-								<%= render 'content', locals: { content_id: c.id }%>
-							<% end %>
 						</table>
-
-
-						<% if current_member.is_admin %>
-							<!-- formulario para subir un nuevo content -->
-							<%= render 'new_content_form', :locals => {:article_id => a.id } %>
-						<% end %>
 					</div>
-				</div>
+					<div class="full div_option div_article_option" id="div_option_<%= a.id %>">
+						<div class="padder non-floater">
+							<div class="full">
+								<div id="article_description">
+									<%= a.description %>
+								</div>
+							</div>
+							<table class="full table-1" id="article_contents_table_<%= a.id%>">						
+								<!-- article contents -->
+								<% a.contents.each do |c| %>
+									<%= render 'content', locals: { content_id: c.id }%>
+								<% end %>
+							</table>
+
+
+							<% if current_member.is_admin %>
+								<!-- formulario para subir un nuevo content -->
+								<%= render 'new_content_form', :locals => {:article_id => a.id } %>
+							<% end %>
+						</div>
+					</div>
+				<% end %>
 			<% end %>
-			<table>
-				<tr>
-					<td><%= image_tag("punto.png")%></td>
-					<td><%= link_to 'Nuevo articulo', new_article_path(topic.id) %></td>
-				</tr>
-			</table>
+			<% if current_member.is_admin %>
+				<table>
+					<tr>
+						<td style="vertical-align: top">&bull;</td>
+						<td><%= link_to 'Nuevo articulo', new_article_path(topic.id) %></td>
+					</tr>
+				</table>
+			<% end %>
 	</div>
 </div>

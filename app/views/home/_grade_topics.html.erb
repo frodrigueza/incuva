@@ -2,6 +2,7 @@
 <% c = Category.find(locals[:category_id])%>
 <div class="level">
 	<% g.topics.each do |t| %>
+		<% if t.contents.count>0 || current_member.is_admin %>
 		<div class="full" id="topic_<%= t.id %>">
 			<table>
 				<tr>
@@ -19,6 +20,7 @@
 				</tr>
 			</table>
 		</div>
+		<% end %>
 	<% end %>
 
 
@@ -26,7 +28,7 @@
 	<% if current_member && current_member.is_admin %>
 			<table>
 				<tr>
-					<td><%= image_tag("punto.png")%></td>
+					<td style="vertical-align: top">&bull;</td>
 					<td><%= link_to 'Nuevo tema', new_topic_path(g.id) %></td>
 					<td></td>
 				</tr>

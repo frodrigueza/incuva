@@ -1,20 +1,14 @@
 <% c = Content.find(locals[:content_id])%>
 <tr id="content_<%= c.id %>" class="content_row">
 	<td><div class="little-img-container"><%= image_tag(c.image) %></div></td>
-	<td class="index"><%= link_to c.name, c.url , {class:c.content_class} %></td>
+	<td class="index"><%= link_to c.name, c.url, {target: "_blank"} %></td>
+	<td class="index"><%= link_to 'Previsualizar', c.url , {class:c.content_class} %></td>
 	<td><%= c.source %></td>
 
 	<!-- delete content icon cross -->
 	<% if current_member && current_member.is_admin %>
 		<td>
-			<%= link_to 'editar', edit_content_path(c) %>
-		</td>
-		<td>
 			<%= link_to 'eliminar', {controller: "home", action: "delete_content", content_id: c.id}, remote: true, class:"delete_icon" %>
 		</td>
 	<% end %>
-
-
-
-	<td><%= link_to image_tag("download_icon.png"), c.url, {id: "download_icon",target: "_blank"}  %></td>
 </tr>

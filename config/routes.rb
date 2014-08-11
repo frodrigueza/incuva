@@ -1,5 +1,7 @@
 Incuba::Application.routes.draw do
 
+  resources :downloads
+
   devise_for :members, controllers: {registrations: 'registrations'}
   resources :grades
 
@@ -40,6 +42,7 @@ Incuba::Application.routes.draw do
   get "/update_member_form" => 'home#update_member_form', as: :update_member_form
   post "/update_member" => 'home#update_member', as: :update_member
   post "/contact_admin" => 'home#contact_admin', as: :contact_admin
+
 
   root 'home#index'
 

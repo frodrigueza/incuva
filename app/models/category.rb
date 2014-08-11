@@ -5,10 +5,12 @@ class Category < ActiveRecord::Base
 
 	def contents
 		contents = []
-		self.topics.each do |t|
-			t.articles.each do |a|
-				a.contents.each do |c|
-					contents << c
+		self.grades.each do |g|
+			g.topics.each do |t|
+				t.articles.each do |a|
+					a.contents.each do |c|
+						contents << c
+					end
 				end
 			end
 		end

@@ -2,33 +2,21 @@ Formulario:
 
 	Funcionamiento:
 		Mail confirmacion del campo e-mail
+		recordar contraseña
+		base de datos contenidos y descargas
+		correo contacto
+		Que chrome pueda guardar contraseña
+
+
+
 
 	Diseño:
-		>Que los usuarios no pueden eliminar noticias!
 		favicon icon
-		achicar el header
 		arreglar noticia
-		links a auspiciadores (me van a mandar las fotos y como quieren que se vea)
-		>"Sign up" por "Registrate"
-		>Marcar los campos obligatorios del registro
-		>"Log out" por "salir"
-		>Agregar "Home" a icono de Home
-		Opcion de descargar las fotos al previsualizarlas
-		Boton X en las previsualizaciones
-		Que chrome pueda guardar contraseña
-		>formulario edicion contenido
+		contador de contenidos en menu de la izquierda
+		descripcion pantalla de recurso (no se muestra)
+		Opcion descargar imagenes al previsualizarlas
 
 
-
- Contents:
- 	content_type:
- 		1 = videos
- 		2 = infografia
- 		3 = cartas al director
- 		4 = columnas
- 		5 = estudios
- 		6 = noticias 
- 		7 = spots
- 		8 = presentacion
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124124136) do
+ActiveRecord::Schema.define(version: 20140807184315) do
 
   create_table "articles", force: true do |t|
     t.integer  "topic_id"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20140124124136) do
     t.datetime "updated_at"
     t.string   "extension"
     t.string   "source"
+    t.text     "preview_image_url"
+  end
+
+  create_table "downloads", force: true do |t|
+    t.integer  "member_id"
+    t.integer  "content_id"
+    t.integer  "download_times", default: 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "grade_categories", force: true do |t|

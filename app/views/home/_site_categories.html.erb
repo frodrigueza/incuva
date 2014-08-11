@@ -1,11 +1,11 @@
 <div class="full">
-	<h3>Asignaturas</h3>
+	<h3>Escoge una asignatura:</h3>
 </div>
 
-<!-- es admin, mostramos todo -->
 <% Category.all.each do |c| %>
 	<div class="full" id="category_<%= c.id%>">
 		<table>
+			<% if c.contents.count > 0 || current_member.is_admin %>
 			<tr class="nav-level-1">
 				<td><%= image_tag("iconos/site_categories/asignatura.png")%></td>
 				<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.contents.count.to_s + ')'%></td>
@@ -13,6 +13,7 @@
 					<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %></td>
 				<% end %>
 			</tr>
+			<% end %>
 		</table>
 	</div>
 
@@ -26,7 +27,7 @@
 	<div class="full">
 		<div class="nav-level-1">
 			<div class="little-img-container left">
-				<%= image_tag("punto.png")%>
+				-
 			</div>
 
 				<!-- category new form -->

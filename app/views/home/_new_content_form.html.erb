@@ -8,65 +8,48 @@
 			<div id="new_content_form">
 				<%= form_tag({action: :upload_content}, multipart: true, remote:true) do %>
 					<%= hidden_field_tag 'article_id' , a.id %>
-					<div class="full">
-						<div class="f-form-label">
-							<span></span>
-						</div>
-						<div class="f-form-input">
-							<b>Subir por URL</b>
-						</div>
-					</div>
-
-					<div class="full">
-						<div class="f-form-label">
-							<span>Titulo:</span>
-						</div>
-						<div class="f-form-input">
-							<%= text_field_tag 'name','', required: true%>
-						</div>
-					</div>
-
-					<div class="full">
-						<div class="f-form-label">
-							<span>URL:</span>
-						</div>
-						<div class="f-form-input">
-							<%= text_field_tag 'url','', required: true %>
-						</div>
-					</div>
-
-					<div class="full">
-						<div class="f-form-label">
-							<span>Tipo archivo:</span>
-						</div>
-						<div class="f-form-input">
-							<div class="full">
-								<%= radio_button_tag(:extension, "pdf", checked: true) %>
-								pdf
-							</div><div class="full">
-								<%= radio_button_tag(:extension, "mp3") %>
-								audio
-							</div><div class="full">
-								<%= radio_button_tag(:extension, "mp4") %>
-								video
-							</div><div class="full">
-								<%= radio_button_tag(:extension, "jpg") %>
-								imagen
-							</div>
-							<div class="full">
-								<%= radio_button_tag(:extension, "rar") %>
-								zip - rar
-							</div>
-						</div>
-					</div>
-
-					<div class="full">
-						<div class="f-form-label">
-						</div>
-						<div class="f-form-input">
-							<%= submit_tag 'Listo'%>
-						</div>
-					</div>
+					<table>
+						<tr>
+							<td>Subir por URL</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Titulo:</td>
+							<td><%= text_field_tag 'name','', required: true%></td>
+						</tr>
+						<tr>
+							<td>URL:</td>
+							<td><%= text_field_tag 'url','', required: true %></td>
+						</tr>
+						<tr>
+							<td>Tipo archivo:</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "pdf", checked: true) %></td>
+							<td>PDF</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "mp3", checked: true) %></td>
+							<td>Audio</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "mp4", checked: true) %></td>
+							<td>Video</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "jpg", checked: true) %></td>
+							<td>Imagen</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "rar", checked: true) %></td>
+							<td>Zip - rar</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><%= submit_tag 'Listo'%></td>
+						</tr>
+					</table>
 				<% end %>
 			</div>
 		</div>
@@ -78,74 +61,55 @@
 			<div id="new_content_form">
 				<%= form_tag({action: :upload_content}, multipart: true) do %>
 					<%= hidden_field_tag 'article_id' , a.id %>
-					<div class="full">
-						<div class="f-form-label">
-							<span></span>
-						</div>
-						<div class="f-form-input">
-							<b>Subir desde PC</b>
-						</div>
-					</div>
-					<div class="full">
-						<div class="f-form-label">
-							<span>Titulo:</span>
-						</div>
-						<div class="f-form-input">
-							<%= text_field_tag 'name','', required: true%>
-						</div>
-					</div>
-					<div class="full">
-						<div class="f-form-label">
-							<span>Archivo:</span>
-						</div>
-						<div class="f-form-input">
-							<%= file_field_tag 'content_file',required: true %>
-						</div>
-					</div>
-					<div class="full">
-						<div class="f-form-label">
-							<span>Fuente:</span>
-						</div>
-						<div class="f-form-input">
-							<%= text_field_tag 'source','InCuVa', required: true%>
-						</div>
-					</div>
-					<div class="full">
-						<div class="f-form-label">
-							<span>Tipo archivo:</span>
-						</div>
-						<div class="f-form-input">
-							<div class="full">
-								<%= radio_button_tag(:extension, "pdf", checked: true) %>
-								documento
-							</div><div class="full">
-								<%= radio_button_tag(:extension, "mp3") %>
-								audio
-							</div><div class="full">
-								<%= radio_button_tag(:extension, "mp4") %>
-								video
-							</div><div class="full">
-								<%= radio_button_tag(:extension, "jpg") %>
-								imagen
-							</div>
-							<div class="full">
-								<%= radio_button_tag(:extension, "rar") %>
-								zip - rar
-							</div>
-							<div class="full">
-								<%= radio_button_tag(:extension, "ppt") %>
-								Power point
-							</div>
-						</div>
-					</div>
-					<div class="full" id="form-notices"></div>
-					<%= hidden_field_tag 'article_id' , a.id %>
-					<div class="full">
-						<div class="f-form-label"></div>
-						<div class="f-form-input">
-							<%= submit_tag 'Listo'%>
-						</div>
-					</div>
+					<table>
+						<tr>
+							<td>Subir desde PC</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Titulo:</td>
+							<td><%= text_field_tag 'name','', required: true%></td>
+						</tr>
+						<tr>
+							<td>Archivo:</td>
+							<td><%= file_field_tag 'content_file',required: true %></td>
+						</tr>
+						<tr>
+							<td>Fuente:</td>
+							<td><%= text_field_tag 'source','InCuVa', required: true%></td>
+						</tr>
+						<tr>
+							<td>Tipo archivo:</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "pdf", checked: true) %></td>
+							<td>PDF</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "mp3", checked: true) %></td>
+							<td>Audio</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "mp4", checked: true) %></td>
+							<td>Video</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "jpg", checked: true) %></td>
+							<td>Imagen</td>
+						</tr>
+						<tr>
+							<td><%= radio_button_tag(:extension, "rar", checked: true) %></td>
+							<td>Zip - rar</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><%= submit_tag 'Listo'%></td>
+						</tr>
+					</table>
+
+
+
 				<% end %>
 			</div>
 		</div>
