@@ -14,20 +14,7 @@ $(function(){
 		slide_ids.push(this.id);
 	});
 
-	// $('.slide_control').click(function(){
-		
-
-	// 	if(this.id == 'slide_control_left')
-	// 	{
-	// 		aux -= 1;
-	// 	}
-	// 	if(this.id == 'slide_control_right')
-	// 	{
-	// 		aux += 1;
-	// 	}
-	// 	$('.slide').hide();
-	// 	$("#"+slide_ids[aux]).fadeIn(2000);
-	// });
+	
 
 
 	if(slide_ids.length > 1){

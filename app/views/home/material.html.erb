@@ -23,12 +23,7 @@
 
 
 			<% if current_member.is_admin %>
-				<div class="full" id="content_form_div">
-					<div class="full">
-						Agregar contenido a <%= content_type_name(params[:format])%>
-					</div>
-					<%= render 'content_form' %>
-				</div>
+				<%= render 'content_form' %>
 			<% end %>
 		</div>
 	</div>
