@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @topic = @article.topic
   end
 
   # POST /articles
