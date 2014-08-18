@@ -1,10 +1,17 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:edit, :new]
 
   # GET /contents
   # GET /contents.json
   def index
     @contents = Content.all
+  end
+  
+  def is_admin
+    if !current_member.is_admin
+      redirect_to root_path
+    end
   end
 
   # GET /contents/1

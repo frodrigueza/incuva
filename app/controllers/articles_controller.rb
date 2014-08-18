@@ -1,10 +1,16 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :is_admin, only: [:edit, :new]
   # GET /articles
   # GET /articles.json
   def index
     
+  end
+  
+  def is_admin
+    if !current_member.is_admin
+      redirect_to root_path
+    end
   end
 
   # GET /articles/1

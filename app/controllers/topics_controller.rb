@@ -1,16 +1,22 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-
+  before_action :is_admin, only: [:edit, :new]
   # GET /topics
   # GET /topics.json
-  def index
-    @topics = Topic.all
+  # def index
+  #   @topics = Topic.all
+  # end
+  
+  def is_admin
+    if !current_member.is_admin
+      redirect_to root_path
+    end
   end
 
   # GET /topics/1
   # GET /topics/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /topics/new
   def new
