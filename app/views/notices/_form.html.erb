@@ -1,0 +1,36 @@
+<%= form_for(@notice) do |f| %>
+  <% if @notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+      <ul>
+      <% @notice.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td>Titulo</td>
+      <td><%= f.text_field :title, required: true %></td>
+    </tr>
+    <tr>
+      <td>Cuerpo</td>
+      <td><%= f.text_area :body, required: true %></td>
+    </tr>
+    <tr>
+      <td>Imagen</td>
+      <td><%= f.file_field :file_up %></td>
+    </tr>
+    <tr>
+      <td>Link de la noticia</td>
+      <td><%= f.text_field :link_url %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit 'Listo' %></td>
+    </tr>
+  </table>
+<% end %>

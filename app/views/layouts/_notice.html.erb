@@ -1,30 +1,36 @@
 <% notice = Notice.find(locals[:notice_id]) %>
-<tr>
-	<td class="span10" id="notice-date-td">
-		<%= notice.f_date.split(' ').first + ' ' + notice.f_date.split(' ')[1] %>
-		<%= notice.f_date.split(' ').last %>
-	</td>
-	<td class="span80">
-		<div class="full" id="notice-title">
+<div class="full notice">
+	<div class="full notice_header">
+		<div class="notice_title">
 			<%= notice.title %>
+			<% if current_member.is_admin %>
+				|<%= link_to 'editar', edit_notice_path(notice) %>
+				<%= link_to 'eliminar', notice, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% end %>
 		</div>
+		<div class="notice_date">
+			<%= notice.f_date %>
+		</div>
+	</div>
+	
+	<div class="full notice_body">
 		<div class="full">
-			<%= notice.body.html_safe %>
+			<% if notice.image_url %>
+				<%= image_tag notice.image_url %>
+			<% end %>
+			<%= notice.body %>	
 		</div>
-	</td>
-
-	<% if current_member.is_admin %>
-	<td class="span10">
-		<div class="little-img-container delete-icon-div small-padder" id="delete-notice-icon">
-			<%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_notice", notice_id: notice.id}, class:"delete_icon" %>
+		<% if notice.link_url %>
+		<div class="full notice_link">
+			<%= link_to 'Ir al link' , notice.link_url %>
 		</div>
-	</td>
-	<% end 	%> 
-</tr>
+		<% end %>
+	</div>
+</div>
 
 
 <!-- 
-<div class="full notice" id="notice_<%= notice.id %>">
+<div class="full notice" class="notice_<%= notice.id %>">
 	<div class="span10">
 		<div class="notice-date">
 		</div>

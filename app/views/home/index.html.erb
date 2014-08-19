@@ -1,6 +1,6 @@
 <div class="full">
 	<div class="full">
-		<h3>Escoge una asignatura!</h3>
+		<h3>Noticias:</h3>
 	</div>
 	<div class="full">
 		<table class="full">
@@ -11,6 +11,6 @@
 	</div>
 
 	<% if current_member.is_admin %>
-		<%= render 'layouts/new_notice_form' %>
+		<%= link_to 'Nueva noticia', new_notice_path %>
 	<% end %>
 </div>

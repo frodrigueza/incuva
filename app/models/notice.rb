@@ -16,4 +16,19 @@ class Notice < ActiveRecord::Base
 
 		return date
 	end
+
+	def f_create(params)
+  		self.title = params[:notice][:title]
+  		self.body = params[:notice][:body]
+  		self.link_url = params[:notice][:link_url]
+
+		if file_up = params[:notice][:file_up]
+			# subida desde el PC
+			container = WAZ::Blobs::Container.find('contents')
+			filename = rand(36**32).to_s(36) + File.extname(file_up.original_filename)
+			container.store(filename, file_up.read, file_up.content_type)
+			self.image_url = container[filename].url
+		end
+
+	end
 end

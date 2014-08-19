@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807184315) do
+ActiveRecord::Schema.define(version: 20140818215502) do
 
   create_table "articles", force: true do |t|
     t.integer  "topic_id"
@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(version: 20140807184315) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "image_url"
+    t.text     "link_url"
   end
 
   create_table "topics", force: true do |t|

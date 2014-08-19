@@ -12,6 +12,7 @@ Incuba::Application.routes.draw do
   resources :categories
 
   resources :contents
+  resources :notices
 
   get '/members/sign_in' => 'members#sign_up'
   
