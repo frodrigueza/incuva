@@ -10,8 +10,8 @@
 					<%= hidden_field_tag 'article_id' , a.id %>
 					<table>
 						<tr>
-							<td>Subir por URL</td>
 							<td></td>
+							<td><b>Subir por URL</b></td>
 						</tr>
 						<tr>
 							<td>Titulo:</td>
@@ -23,27 +23,27 @@
 						</tr>
 						<tr>
 							<td>Tipo archivo:</td>
+							<td><%= radio_button_tag(:extension, "pdf", checked: true) %>PDF</td>
+						</tr>
+						<tr>
 							<td></td>
+							<td><%= radio_button_tag(:extension, "ppt") %>Powerpoint</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "pdf", checked: true) %></td>
-							<td>PDF</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "mp3") %>Audio</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "mp3", checked: true) %></td>
-							<td>Audio</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "mp4") %>Video</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "mp4", checked: true) %></td>
-							<td>Video</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "jpg") %>Imagen</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "jpg", checked: true) %></td>
-							<td>Imagen</td>
-						</tr>
-						<tr>
-							<td><%= radio_button_tag(:extension, "rar", checked: true) %></td>
-							<td>Zip - rar</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "rar") %>Zip - rar</td>
 						</tr>
 						<tr>
 							<td></td>
@@ -63,8 +63,8 @@
 					<%= hidden_field_tag 'article_id' , a.id %>
 					<table>
 						<tr>
-							<td>Subir desde PC</td>
 							<td></td>
+							<td><b>Subir desde PC</b></td>
 						</tr>
 						<tr>
 							<td>Titulo:</td>
@@ -80,27 +80,27 @@
 						</tr>
 						<tr>
 							<td>Tipo archivo:</td>
+							<td><%= radio_button_tag(:extension, "pdf", checked: true) %>PDF</td>
+						</tr>
+						<tr>
 							<td></td>
+							<td><%= radio_button_tag(:extension, "ppt") %>Powerpoint</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "pdf", checked: true) %></td>
-							<td>PDF</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "mp3") %>Audio</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "mp3", checked: true) %></td>
-							<td>Audio</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "mp4") %>Video</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "mp4", checked: true) %></td>
-							<td>Video</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "jpg") %>Imagen</td>
 						</tr>
 						<tr>
-							<td><%= radio_button_tag(:extension, "jpg", checked: true) %></td>
-							<td>Imagen</td>
-						</tr>
-						<tr>
-							<td><%= radio_button_tag(:extension, "rar", checked: true) %></td>
-							<td>Zip - rar</td>
+							<td></td>
+							<td><%= radio_button_tag(:extension, "rar") %>Zip - rar</td>
 						</tr>
 						<tr>
 							<td></td>

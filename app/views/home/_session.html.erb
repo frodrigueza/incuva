@@ -2,7 +2,7 @@
 	<div id="session_table_div">
 		<table id="session_table">
 			<tr>
-				<td><%= current_member.f_name %></td>
+				<td><%= link_to current_member.f_name, update_member_form_path %></td>
 			</tr>
 			<tr>
 				<td><%= current_member.email %></td>
