@@ -4,3 +4,6 @@ heroku run rake db:migrate
 heroku run rake db:seed
 heroku run rails console
 heroku run rake db:version
+
+
+padder: arriba derecha abajo izq

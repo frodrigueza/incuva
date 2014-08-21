@@ -51,6 +51,10 @@ div{
 .middle{
 	width: 50%;
 }
+.padder{
+	float: none;
+	padding: 10px;
+}
 div{
 	float: left;
 }
@@ -205,10 +209,6 @@ div{
 		}
 	}
 }
-.padder{
-	float: none;
-	padding: 10px;
-}
 
 
 /*site_categories*/
@@ -316,3 +316,39 @@ div{
 	}
 }
 
+/*contact_form*/
+#contact_form{
+	#mensaje{
+		width: 500px;
+	}
+}
+
+/*single material partial*/
+#single_material_table{
+	.single_material_info{
+		padding-bottom: 40px;
+		text-align: justify;
+
+		.material_image{
+			width: 30%;
+			float: left;
+
+			img{
+				width: 100%;
+			}
+			.padder{
+				float: none;
+				padding: 0px 10px 0px 0px;
+			}
+		}
+		.material_title{
+			font-weight: bold;
+			width: 70%;
+			margin-bottom: 20px;
+		}
+		.material_description{
+			padding-top: 30px;
+			margin-bottom: 40px; 
+		}
+	}
+}

@@ -15,7 +15,7 @@
             </tr>
             <tr>
               <td>Titulo:</td>
-              <td><%= text_field_tag 'name','', required: true%></td>
+              <td><%= text_field_tag 'name','', required: true %></td>
             </tr>
             <tr>
               <td>Descripción:</td>
@@ -24,6 +24,10 @@
             <tr>
               <td>URL:</td>
               <td><%= text_field_tag 'url','', required: true %></td>
+            </tr>
+            <tr>
+              <td>Imagen previa:</td>
+              <td><%= file_field_tag 'content_file_2',required: true %></td>
             </tr>
             <tr>
               <td colspan="2"><%= radio_button_tag(:extension, "pdf", checked: true) %>PDF</td>
@@ -76,6 +80,10 @@
             <tr>
               <td>Archivo:</td>
               <td><%= file_field_tag 'content_file',required: true %></td>
+            </tr>
+            <tr>
+              <td>Imagen previa:</td>
+              <td><%= file_field_tag 'content_file_2',required: true %></td>
             </tr>
             <tr>
               <td>Fuente:</td>

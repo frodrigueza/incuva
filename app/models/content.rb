@@ -36,6 +36,14 @@ class Content < ActiveRecord::Base
 
 	end
 
+	def preview_image
+		if self.preview_image_url
+			self.preview_image_url
+		else
+			'elige_educar.jpg'
+		end
+	end
+
 	def upload_content(params)
 
 		
@@ -52,6 +60,14 @@ class Content < ActiveRecord::Base
 			# subido desde URL
 			self.url = params[:url]
 			self.source = URI.parse(url).host
+		end
+
+		if file_up = params[:content_file_2]
+			# imagen a previsualizar
+			container = WAZ::Blobs::Container.find('contents')
+			filename = rand(36**32).to_s(36) + File.extname(file_up.original_filename)
+			container.store(filename, file_up.read, file_up.content_type)
+			self.preview_image_url = container[filename].url
 		end
 
 		self.extension = params[:extension]

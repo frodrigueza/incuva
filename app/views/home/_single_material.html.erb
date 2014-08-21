@@ -1,0 +1,31 @@
+<% c = locals[:content] %>
+<tr>
+
+	<td class="single_material_info">
+				<div class="material_image">
+					<div class="padder">
+						<%= link_to (image_tag c.preview_image), c.url, {class:c.content_class, target: '_blank'} %>
+					</div>
+				</div>
+				<div class="material_title">
+					<%= link_to c.name, c.url , {class:c.content_class, target: '_blank'} %>
+				</div>
+				<%= c.description %>
+		<!-- <div class="span30">
+			<div class="padder">
+			</div>
+		</div>
+		<div class="span70">
+			<div class="full material_title">
+			</div>
+			<div class="full material_description">
+			</div>
+		</div> -->
+	</td>
+
+
+	<% if current_member.is_admin %>
+		<td><%= link_to 'editar', edit_content_path(c)%></td>
+		<td><%= link_to 'eliminar', {controller: "home", action: "delete_content", content_id: c.id}	, class:"delete_icon" %></td>
+	<% end %>
+</tr>
