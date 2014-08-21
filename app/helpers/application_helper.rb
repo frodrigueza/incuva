@@ -103,4 +103,12 @@ module ApplicationHelper
 		end
 		
 	end
+
+	def upload_file(file_up)
+		container = WAZ::Blobs::Container.find('contents')
+		filename = rand(36**32).to_s(36) + File.extname(file_up.original_filename)
+		container.store(filename, file_up.read, file_up.content_type)
+		
+		return container[filename].url
+	end
 end

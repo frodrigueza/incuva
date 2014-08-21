@@ -21,6 +21,14 @@
       <td><%= f.text_field :description %></td>
     </tr>
     <tr>
+      <td>Archivo:</td>
+      <td><%= f.file_field 'content_file' %></td>
+    </tr>
+    <tr>
+      <td>Imagen previa:</td>
+      <td><%= f.file_field 'content_file_2' %></td>
+    </tr>
+    <tr>
       <td></td>
       <td><%= f.submit 'Listo' %></td>
     </tr>

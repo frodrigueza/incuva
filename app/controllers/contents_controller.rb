@@ -50,6 +50,7 @@ class ContentsController < ApplicationController
   # PATCH/PUT /contents/1.json
   def update
     respond_to do |format|
+      @content.update_content(params[:content])
       if @content.update(content_params)
         format.html { redirect_to root_path }
         format.json { head :no_content }

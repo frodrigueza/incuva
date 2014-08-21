@@ -1,4 +1,5 @@
 class Content < ActiveRecord::Base
+	include ApplicationHelper
 	belongs_to :article
 	has_many :downloads
 
@@ -88,6 +89,16 @@ class Content < ActiveRecord::Base
 			if container[self.url.split('/').last]
 				container[self.url.split('/').last].destroy!
 			end
+		end
+	end
+
+	def update_content(params)
+		if file_up = params[:content_file]
+			self.url = upload_file(file_up)
+		end
+
+		if file_up = params[:content_file_2]
+			self.preview_image_url = upload_file(file_up)
 		end
 	end
 end
