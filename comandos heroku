@@ -7,3 +7,6 @@ heroku run rake db:version
 
 
 padder: arriba derecha abajo izq
+
+
+<%= link_to (image_tag c.preview_image), c.url, {class:c.content_class, target: '_blank'} %>
