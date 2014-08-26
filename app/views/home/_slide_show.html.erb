@@ -1,17 +1,15 @@
 <div class="full" id="slide_show">
-	<div class="full slide" id="slide_1">
-		<%= image_tag 'slide/slide_1.jpg' %>
-	</div>
-	<div class="full slide" id="slide_2">
-		<%= image_tag 'slide/slide_2.jpg' %>
-	</div>
-	<div class="full slide" id="slide_3">
-		<%= image_tag 'slide/slide_3.jpg' %>
-	</div>
-	<div class="full slide" id="slide_4">
-		<%= image_tag 'slide/slide_4.jpg' %>
-	</div>
-	<div class="full slide" id="slide_5">
-		<%= image_tag 'slide/slide_5.jpg' %>
-	</div>
+	<% i = 1 %>
+	<% Slide.all.order(:play_order).each do |s| %>
+		<div class="full slide" id="slide_<%= i%>">
+			<%= link_to (image_tag s.image_url), s.link_url, {target: '_blank'} %>
+		</div>
+		<% i += 1%>
+	<% end %>
 </div>
+<% if current_member.is_admin %>
+	<div class="full">
+		<%= link_to 'Slides', slides_path %>
+		<%= link_to 'Nueva slide', new_slide_path %>
+	</div>
+<% end %>

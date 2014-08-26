@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818215502) do
+ActiveRecord::Schema.define(version: 20140826185856) do
 
   create_table "articles", force: true do |t|
     t.integer  "topic_id"
@@ -99,6 +99,14 @@ ActiveRecord::Schema.define(version: 20140818215502) do
     t.datetime "updated_at"
     t.text     "image_url"
     t.text     "link_url"
+  end
+
+  create_table "slides", force: true do |t|
+    t.text     "image_url"
+    t.text     "link_url"
+    t.integer  "play_order", default: -1
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "topics", force: true do |t|

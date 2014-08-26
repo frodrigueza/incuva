@@ -1,0 +1,31 @@
+<h1>Slides sitio Incuva</h1>
+
+<table class="full">
+  <thead>
+    <tr>
+      <td><b>Image url</b></td>
+      <td><b>Link url</b></td>
+      <td><b>Lugar reproduccion</b></td>
+      <td><b></b></td>
+      <td><b></b></td>
+      <td><b></b></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slides.order(:play_order).each do |slide| %>
+      <tr>
+        <td><%= slide.image_url %></td>
+        <td><%= slide.link_url %></td>
+        <td><%= slide.play_order %></td>
+        <td><%= link_to 'Ver', slide %></td>
+        <td><%= link_to 'Editar', edit_slide_path(slide) %></td>
+        <td><%= link_to 'Eliminar', slide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Slide', new_slide_path %>

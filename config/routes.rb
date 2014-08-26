@@ -1,18 +1,15 @@
 Incuba::Application.routes.draw do
 
+  resources :slides
   resources :downloads
-
-  devise_for :members, controllers: {registrations: 'registrations'}
   resources :grades
-
   resources :topics
-
   resources :articles
-
   resources :categories
-
   resources :contents
   resources :notices
+
+  devise_for :members, controllers: {registrations: 'registrations'}
 
   get '/members/sign_in' => 'members#sign_up'
   
