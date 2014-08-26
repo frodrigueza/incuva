@@ -20,6 +20,12 @@ class ApplicationController < ActionController::Base
     members_sign_in_path
   end
 
+  def is_admin
+    if !current_member.is_admin
+      redirect_to root_path
+    end
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :lastname
