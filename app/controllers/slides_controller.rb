@@ -1,7 +1,7 @@
 class SlidesController < ApplicationController
   before_action :set_slide, only: [:show, :edit, :update, :destroy]
   before_action :is_admin
-  
+
   # GET /slides
   # GET /slides.json
   def index
@@ -42,6 +42,8 @@ class SlidesController < ApplicationController
   # PATCH/PUT /slides/1
   # PATCH/PUT /slides/1.json
   def update
+    @slide.create_slide(params[:slide])
+    
     respond_to do |format|
       if @slide.update(slide_params)
         format.html { redirect_to @slide, notice: 'Slide was successfully updated.' }

@@ -1,23 +1,21 @@
-<div class="full">
-	<div class="section-content full">
-		<div class="full">
-
-			<div class="full">
-				<h3><%= content_type_name(params[:format])%></h3>
-			</div>
-
-			<div class="full">
-				<table id="single_material_table">
-					<% @contents.each do |c| %>
-						<%= render 'single_material', locals:{content: c} %>
-					<% end %>
-				</table>
-			</div>
-
-
-			<% if current_member.is_admin %>
-				<%= render 'content_form' %>
-			<% end %>
-		</div>
+<div class="full material_section">
+	<div class="full title">
+		<h3><%= content_type_name(params[:format])%></h3>
 	</div>
+	<div class="full description">
+		<%= content_type_description(params[:format])%>
+	</div>
+
+	<div class="full">
+		<table id="single_material_table">
+			<% @contents.each do |c| %>
+				<%= render 'single_material', locals:{content: c} %>
+			<% end %>
+		</table>
+	</div>
+
+
+	<% if current_member.is_admin %>
+		<%= render 'content_form' %>
+	<% end %>
 </div>

@@ -7,11 +7,11 @@ class Slide < ActiveRecord::Base
 		end
 
 		if params[:link_url] != ''
-			self.link_url = URI(self.link_url)
+			self.link_url = URI(params[:link_url])
 			if self.link_url.instance_of?(URI::Generic)
 			    self.link_url = URI::HTTP.build({:host => self.link_url.to_s}) 
 			end
-			self.link_url = self.link_url.to_s
+			self.link_url = self.link_url.to_s	
 		end
 
 
