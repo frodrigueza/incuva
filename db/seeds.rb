@@ -6,22 +6,3 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-# Members
-Member.create(email: "admin@incuva.cl", password:"adminincuva", :password_confirmation => "adminincuva", is_admin: true, name: "Administrador", lastname: "Incuva")
-
-# categories
-Category.create(name: "Matemáticas")
-Category.create(name: "Lenguaje")
-Category.create(name: "Historia")
-Category.create(name: "Física")
-Category.create(name: "Biología")
-Category.create(name: "Química")
-
-Category.all.each do |c|
-
-	# grades
-	12.times do |t|
-		c.grades << Grade.create(level: t+1)
-	end
-end
