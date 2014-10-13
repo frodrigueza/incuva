@@ -79,6 +79,10 @@ module ApplicationHelper
 				return 'Publicidad'
 			when 8
 				return 'Presentaciones'
+			when 9
+				return 'Orientación'
+			when 10
+				return 'Proyectos'
 		end
 	end
 
