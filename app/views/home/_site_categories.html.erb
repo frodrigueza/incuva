@@ -8,7 +8,7 @@
 			<% if c.contents.count > 0 || current_member.is_admin %>
 			<tr class="nav-level-1">
 				<td><%= image_tag("iconos/site_categories/asignatura.png")%></td>
-				<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.contents.count.to_s + ')'%></td>
+				<td class="nav-level" id="level_1_<%= c.id %>"><%= c.name + ' (' + c.topics.count.to_s + ')'%></td>
 				<% if current_member && current_member.is_admin %>
 					<td><%= link_to image_tag("delete_icon.png"), {controller: "home", action: "delete_item", category_id: c.id}, remote: true, class: "delete_icon" %></td>
 				<% end %>
